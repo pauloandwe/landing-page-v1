@@ -11,6 +11,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
 
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -48,20 +50,24 @@
     <main id="page-content">
         <!-- Página Home -->
         <div id="home" class="page">
-            <section class="hero-section-first ">
-                <div class="container">
-                    <img src="img/logo.jpg" class="hero-section-img" alt="">
-                    <h2 class="lead-1">A Verdadeira Fábrica de</h2>
-                   
-                    <h1 class="lead-2">BROWNIES</h1>
-                    <div class="gallery" id="gallery">
-                        <img src="img/brownie.png" alt="Imagem 1">
-                        <img src="img/brownie-oreo.png" alt="Imagem 4">
-                        <img src="img/brownie.png" alt="Imagem 1">
-                        <img src="img/brownie-oreo.png" alt="Imagem 4">
-                        <img src="img/brownie.png" alt="Imagem 1">
+            <section class="hero-section-first">
+                <div class="container hero-container">
+                    <div class="hero-content">
+                        <img src="img/logo.jpg" class="hero-section-img" alt="Doces Cacau">
+                        <h2 class="lead-1">PROVE!</h2>
+                        <h1 class="lead-2">MOMENTOS DOCES!</h1>
+                        <p class="hero-description">Conheça todas as nossas opções de brownies artesanais para tornar seu dia ainda mais especial.</p>
+                        <a href="#" data-page="produtos" class="btn btn-lg btn-primary">Descobrir Sabores</a>
                     </div>
-                    <div class="display-img"></div>
+                    
+                    <!-- Mantendo a galeria original para compatibilidade com o JavaScript -->
+                    <div class="gallery" id="gallery">
+                        <img src="img/brownie.png" alt="Brownie Tradicional">
+                        <img src="img/brownie-oreo.png" alt="Brownie Oreo">
+                        <img src="img/brownie.png" alt="Brownie Tradicional">
+                        <img src="img/brownie-oreo.png" alt="Brownie Oreo">
+                        <img src="img/brownie.png" alt="Brownie Tradicional">
+                    </div>
                 </div>
             </section>
 
@@ -179,46 +185,7 @@
                 </div>
             </section>
             
-            <section class="py-5 bg-white">
-                <div class="container">
-                    <h2 class="section-title">Produtos em Destaque</h2>
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image" style="background-image: url('/api/placeholder/400/250');"></div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Trufa Tradicional</h4>
-                                    <p class="product-description">Deliciosa trufa de chocolate meio amargo recheada com ganache especial.</p>
-                                    <p class="product-price">R$ 8,90</p>
-                                    <a href="#" data-page="loja" class="btn btn-sm btn-primary">Comprar</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image" style="background-image: url('/api/placeholder/400/250');"></div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Bombom Brasileiro</h4>
-                                    <p class="product-description">Bombom com recheio de brigadeiro e cobertura de chocolate belga.</p>
-                                    <p class="product-price">R$ 9,50</p>
-                                    <a href="#" data-page="loja" class="btn btn-sm btn-primary">Comprar</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image" style="background-image: url('/api/placeholder/400/250');"></div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Barra Gourmet</h4>
-                                    <p class="product-description">Barra de chocolate 70% cacau com pedaços de frutas secas.</p>
-                                    <p class="product-price">R$ 22,90</p>
-                                    <a href="#" data-page="loja" class="btn btn-sm btn-primary">Comprar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+          
         </div>
 
         <!-- Página Quem Somos -->
