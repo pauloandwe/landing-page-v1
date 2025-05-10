@@ -1,0 +1,580 @@
+:root {
+    --primary-color: #4B2E2B;
+    --secondary-color: #d4a76a;
+    --light-color: #f8f3e9;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-color);
+}
+
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px;
+}
+
+.navbar-brand {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--primary-color);
+}
+
+.nav-link {
+    font-family: 'Oswald', sans-serif;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin: 0 10px;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+.nav-link.active {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.hero-section-first {
+    background: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    color: white;
+    text-align: center;
+    max-height: 800px;
+    min-height: 510px;
+    height: 510px;
+}
+
+@media (min-width: 510px)  {
+    .hero-section-first {
+        height: 80vw;
+
+    }
+}
+
+@media (min-width: 1000px)  {
+    .hero-section-first {
+        
+        height: 100vw;
+
+    }
+}
+
+.hero-section-img{
+    width: 150px;
+    max-width: 150px;
+    background-color: var(--light-color);
+    border-radius: 100%;
+    transition: 0.5s all;
+}
+
+.hero-section-img:hover{
+    scale: 1.01;
+}
+
+.lead-1{
+    margin-top: 60px;
+}
+
+.lead-2{
+    font-weight: bold;
+    font-size: 10vw;    
+}
+
+
+@media (min-width: 1940px)  {
+    .lead-2{
+        font-weight: bold;
+        font-size: 190px;
+    }
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: -100px;
+}
+
+.gallery img {
+    width: 200px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+
+}
+
+.hero-section {
+    background: var(--primary-color);
+    display: flex;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+
+
+.section-title {
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Mais estilos CSS omitidos para brevidade, mas são os mesmos do arquivo original */
+.about-section {
+    background-color: white;
+    padding: 80px 0;
+}
+
+.about-image {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.values-section {
+    background-color: var(--light-color);
+    padding: 80px 0;
+}
+
+.value-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 100%;
+    transition: transform 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+}
+
+.value-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.team-section {
+    background-color: white;
+    padding: 80px 0;
+}
+
+.team-member {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid var(--secondary-color);
+}
+
+.social-icons a {
+    color: var(--primary-color);
+    margin: 0 5px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-title {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.product-price {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.product-description {
+    margin: 10px 0;
+    color: #666;
+}
+
+.contact-info {
+    margin-bottom: 50px;
+}
+
+.contact-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-right: 20px;
+}
+
+.contact-form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.25rem rgba(212, 167, 106, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-title {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer-contact li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+.footer-links a {
+    color: white;
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.copyright {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+}
+
+.whatsapp-button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+.whatsapp-button a:hover {
+    background-color: #20BA5C;
+    transform: scale(1.1);
+}
+
+.whatsapp-button i {
+    font-size: 35px;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-button {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .whatsapp-button a {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .whatsapp-button i {
+        font-size: 28px;
+    }
+}
+
+.testimonial-slider-container {
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.testimonial-slider {
+    display: flex;
+    animation: scroll 40s linear infinite;
+}
+
+.testimonial-slider:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-1600px); /* Ajuste conforme o número de cards */
+    }
+}
+
+.testimonial-slider-container {
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+    margin: 0 auto;
+}
+
+.testimonial-track {
+    display: flex;
+    position: relative;
+    transition: transform 0.1s ease;
+}
+
+.testimonial-card {
+    flex: 0 0 320px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 240px;
+}
+
+.testimonial-avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.testimonial-avatar img {
+    width: 60px;
+    height: 60px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 50%;
+}
+
+.testimonial-content {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.testimonial-rating {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .testimonial-card {
+        flex: 0 0 280px;
+        padding: 15px;
+    }
+}
+
+/* Estilos para a seção de galeria de brownies */
+.brownie-showcase {
+    background-color: white;
+    padding: 60px 0;
+}
+
+.brownie-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin-bottom: 30px;
+}
+
+.brownie-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.brownie-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(75, 46, 43, 0.2);
+}
+
+.brownie-item.large {
+    grid-column: span 2;
+}
+
+.brownie-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.brownie-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.brownie-item.large .brownie-image img {
+    height: 300px;
+}
+
+.brownie-image:hover img {
+    transform: scale(1.05);
+}
+
+.brownie-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(0deg, rgba(75, 46, 43, 0.9) 0%, rgba(75, 46, 43, 0.7) 60%, rgba(75, 46, 43, 0) 100%);
+    color: white;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.3s ease;
+}
+
+.brownie-image:hover .brownie-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.brownie-overlay h4 {
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.brownie-overlay p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .brownie-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .brownie-item.large {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .brownie-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .brownie-image img,
+    .brownie-item.large .brownie-image img {
+        height: 250px;
+    }
+}
