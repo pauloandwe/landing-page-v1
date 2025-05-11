@@ -195,3 +195,9 @@
               initCarousel();
           }
       });
+      
+      $(window).on('load', function() {
+        setTimeout(function() {
+            $('.preloader').addClass('fade-out');
+        }, 500);
+    });

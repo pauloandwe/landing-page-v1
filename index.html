@@ -34,9 +34,6 @@
                         <a class="nav-link" href="#" data-page="produtos">PRODUTOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-page="loja">LOJA VIRTUAL</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#" data-page="contato">CONTATO</a>
                     </li>
                 </ul>
@@ -44,6 +41,11 @@
         </div>
     </nav>
 
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
 
     
     <!-- Conteúdo das páginas -->
@@ -60,13 +62,9 @@
                         <a href="#" data-page="produtos" class="btn btn-lg btn-primary">Explorar Sabores</a>
                     </div>
                     
-                    <!-- Galeria de Imagens -->
-                    <div class="gallery" id="gallery">
-                        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Brownie Tradicional">
-                        <img src="https://images.unsplash.com/photo-1607920592519-bab2a80eig6j?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Brownie com Nozes">
-                        <img src="https://images.unsplash.com/photo-1589375900247-3c3dd240de63?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Brownie com Chocolate">
-                        <img src="https://images.unsplash.com/photo-1605190557072-1fe6a230ee65?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Brownie Especial">
-                    </div>
+                    <div class="gallery" id="gallery"></div>
+                  
+                    
                 </div>
             </section>
 
@@ -125,22 +123,12 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="brownie-item">
-                            <div class="brownie-image">
-                                <img src="/api/placeholder/600/400" alt="Mini Brownies">
-                                <div class="brownie-overlay">
-                                    <h4>Mini Brownies</h4>
-                                    <p>Versões menores e irresistíveis do nosso brownie tradicional</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    
-                    <div class="text-center mt-5">
-                        <a href="#" data-page="produtos" class="btn-ver-todos">Ver Todos os Produtos</a>
-                    </div>
+                 
+                        <div class="text-center mt-5">
+                            <a href="#" data-page="produtos" class="btn-ver-todos">Ver Todos os Produtos</a>
                 </div>
+            </div>
             </section>
             
             <section class="py-5" style="background-color: var(--light-color);">
@@ -149,7 +137,6 @@
                     
                     <div class="testimonial-slider-container">
                         <div id="testimonial-track" class="testimonial-track">
-                            <!-- Os cartões serão inseridos via JavaScript -->
                         </div>
                     </div>
                 </div>
@@ -189,7 +176,7 @@
 
         <!-- Página Quem Somos -->
         <div id="quem-somos" class="page">
-            <section class="hero-section">
+            <section class="hero-section hero-section-about">
                 <div class="container">
                     <h1 class="display-4 fw-bold">Quem Somos</h1>
                     <p class="lead">Conheça a história da Doces Cacau, uma paixão por chocolate transformada em arte</p>
@@ -260,10 +247,10 @@
                 <div class="container">
                     <h2 class="section-title">Nossa Equipe</h2>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="text-center">
                             <div class="team-member">
-                                <img src="/api/placeholder/300/300" alt="Maria Silva">
-                                <h4>Maria Silva</h4>
+                                <img src="img/geo.jpg" alt="geocstr">
+                                <h4>Geocstr</h4>
                                 <p>Fundadora e Chef Chocolatier</p>
                                 <div class="social-icons">
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -272,30 +259,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="team-member">
-                                <img src="/api/placeholder/300/300" alt="João Oliveira">
-                                <h4>João Oliveira</h4>
-                                <p>Co-fundador e Diretor Criativo</p>
-                                <div class="social-icons">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="team-member">
-                                <img src="/api/placeholder/300/300" alt="Ana Santos">
-                                <h4>Ana Santos</h4>
-                                <p>Chef de Produção</p>
-                                <div class="social-icons">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </section>
@@ -303,7 +267,7 @@
 
         <!-- Página Produtos -->
         <div id="produtos" class="page">
-            <section class="hero-section">
+            <section class="hero-section hero-section-product">
                 <div class="container">
                     <h1 class="display-4 fw-bold">Nossos Produtos</h1>
                     <p class="lead">Conheça nossa linha exclusiva de chocolates artesanais</p>
@@ -393,70 +357,10 @@
             </section>
         </div>
 
-        <!-- Página Loja Virtual -->
-        <div id="loja" class="page">
-            <section class="hero-section">
-                <div class="container">
-                    <h1 class="display-4 fw-bold">Loja Virtual</h1>
-                    <p class="lead">Escolha seus chocolates favoritos e receba em casa</p>
-                </div>
-            </section>
-
-            <section class="py-5 bg-white">
-                <div class="container">
-                    <div class="row mb-4">
-                        <div class="col-md-6 offset-md-3">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Buscar produtos...">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image" style="background-image: url('/api/placeholder/400/250');"></div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Trufa Tradicional</h4>
-                                    <p class="product-description">Deliciosa trufa de chocolate meio amargo recheada com ganache especial.</p>
-                                    <p class="product-price">R$ 8,90</p>
-                                    <button class="btn btn-primary">Adicionar ao Carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image" style="background-image: url('/api/placeholder/400/250');"></div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Bombom Brasileiro</h4>
-                                    <p class="product-description">Bombom com recheio de brigadeiro e cobertura de chocolate belga.</p>
-                                    <p class="product-price">R$ 9,50</p>
-                                    <button class="btn btn-primary">Adicionar ao Carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image" style="background-image: url('/api/placeholder/400/250');"></div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Trufa de Café</h4>
-                                    <p class="product-description">Trufa com ganache de chocolate e café premium, finalizada com pó de cacau.</p>
-                                    <p class="product-price">R$ 9,90</p>
-                                    <button class="btn btn-primary">Adicionar ao Carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
 
         <!-- Página Contato -->
         <div id="contato" class="page">
-            <section class="hero-section">
+            <section class="hero-section hero-section-ctt">
                 <div class="container">
                     <h1 class="display-4 fw-bold">Contato</h1>
                     <p class="lead">Entre em contato conosco para dúvidas, pedidos ou parcerias</p>
