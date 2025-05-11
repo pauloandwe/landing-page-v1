@@ -1566,3 +1566,207 @@ footer {
     z-index: 0;
     height: 470px;
 }
+
+/* Estilos para a seção de informações destacadas */
+.info-highlight-section {
+    position: relative;
+    padding: 100px 0;
+    margin: 60px 0;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://media.istockphoto.com/id/1130692246/photo/homemade-chocolate-brownies-shot-from-above.jpg?s=612x612&w=0&k=20&c=vwXHR_DXORJNqHA8ufMhD38y4YqfPvChZioxT0bZjQQ=');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(0.3) saturate(1.2);
+    z-index: -1;
+}
+
+.info-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.info-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                opacity 0.8s ease;
+    position: relative;
+    border-bottom: 5px solid var(--highlight-color);
+}
+
+.info-card.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.info-card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 25px;
+    color: white;
+    font-size: 32px;
+    box-shadow: 0 10px 20px rgba(75, 46, 43, 0.3);
+    transition: transform 0.5s ease;
+}
+
+.info-card:hover .info-card-icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.info-card h3 {
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.info-card p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-bottom: 0;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease 0.6s;
+}
+
+.cta-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--highlight-color);
+    color: var(--dark-brown);
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 25px rgba(241, 165, 165, 0.5);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.cta-button span {
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.cta-button i {
+    margin-left: 10px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    transition: all 0.4s ease;
+    z-index: 0;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(241, 165, 165, 0.7);
+    border-color: var(--highlight-color);
+    color: var(--primary-color);
+}
+
+.cta-button:hover:before {
+    width: 100%;
+}
+
+.cta-button:hover i {
+    transform: translateX(5px);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .info-highlight-section {
+        padding: 80px 0;
+    }
+    
+    .info-card {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-cards-container {
+        gap: 20px;
+    }
+    
+    .info-card {
+        padding: 30px 25px;
+    }
+    
+    .info-card-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+    }
+    
+    .info-card h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .info-highlight-section {
+        padding: 60px 0;
+    }
+    
+    .info-card {
+        flex: 1 0 100%;
+        max-width: 100%;
+        margin: 0 15px;
+    }
+    
+    .cta-button {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+}

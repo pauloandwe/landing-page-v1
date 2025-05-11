@@ -201,3 +201,62 @@
             $('.preloader').addClass('fade-out');
         }, 500);
     });
+
+// Função para verificar se o elemento está visível na viewport
+function isElementInViewport(el) {
+    if (!el) return false;
+    
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85
+    );
+}
+
+// Função para animar os elementos da seção de informações
+function animateInfoSection() {
+    // Animar cada card com delay sequencial
+    const infoCards = document.querySelectorAll('.info-card');
+    infoCards.forEach(card => {
+        if (isElementInViewport(card) && !card.classList.contains('visible')) {
+            // Aplica delay personalizado baseado no atributo data-delay
+            const delay = parseInt(card.getAttribute('data-delay') || 0);
+            setTimeout(() => {
+                card.classList.add('visible');
+            }, delay);
+        }
+    });
+    
+    // Animar o botão CTA
+    const ctaContainer = document.querySelector('.cta-container');
+    if (ctaContainer && isElementInViewport(ctaContainer) && !ctaContainer.classList.contains('visible')) {
+        ctaContainer.classList.add('visible');
+    }
+}
+
+// Inicializar animações quando o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', function() {
+    // Verificar animações no carregamento inicial
+    setTimeout(animateInfoSection, 150);
+    
+    // Verificar animações durante o scroll
+    window.addEventListener('scroll', animateInfoSection, {passive: true});
+    
+    // Reconfigurar animações ao voltar para a página home
+    const homeLinks = document.querySelectorAll('a[data-page="home"]');
+    homeLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Remover classes de visibilidade para permitir re-animação
+            document.querySelectorAll('.info-card').forEach(card => {
+                card.classList.remove('visible');
+            });
+            
+            const ctaContainer = document.querySelector('.cta-container');
+            if (ctaContainer) {
+                ctaContainer.classList.remove('visible');
+            }
+            
+            // Verificar animações após pequeno delay
+            setTimeout(animateInfoSection, 100);
+        });
+    });
+});
