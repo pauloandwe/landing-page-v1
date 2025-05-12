@@ -2,34 +2,25 @@
 
 
   $(document).ready(function() {
-            // Por padrão, exibe a página inicial
             $('#home').addClass('active');
             $('a[data-page="home"]').addClass('active');
             
-            // Manipulador de eventos para links de navegação
             $('a[data-page]').on('click', function(e) {
                 e.preventDefault();
                 
-                // Obtém o ID da página a ser exibida
                 var pageId = $(this).data('page');
                 
-                // Esconde todas as páginas
                 $('.page').removeClass('active');
                 
-                // Remove a classe ativa de todos os links
                 $('.nav-link').removeClass('active');
                 
-                // Adiciona a classe ativa ao link clicado
                 $('a[data-page="' + pageId + '"]').addClass('active');
                 
-                // Exibe a página selecionada
                 $('#' + pageId).addClass('active');
                 
-                // Rola para o topo da página
                 window.scrollTo(0, 0);
             });
             
-            // Efeito na navbar ao rolar
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 50) {
                     $('.navbar').addClass('bg-white').css('box-shadow', '0 2px 4px rgba(0,0,0,0.1)');
@@ -38,7 +29,6 @@
                 }
             });
             
-            // Alerta para botões de ação
             $(document).on('click', '.btn-primary', function() {
                 if ($(this).text() === 'Adicionar ao Carrinho') {
                     var productName = $(this).closest('.product-info').find('.product-title').text();
@@ -46,7 +36,6 @@
                 }
             });
             
-            // Submissão do formulário de contato
             $('#contactForm').on('submit', function(e) {
                 e.preventDefault();
                 alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
@@ -92,7 +81,6 @@
           }
       ];
       
-      // Função para criar as estrelas de avaliação
       function createRatingStars(rating) {
           let starsHTML = '';
           const fullStars = Math.floor(rating);
@@ -109,7 +97,6 @@
           return starsHTML;
       }
       
-      // Função para criar um cartão de depoimento
       function createTestimonialCard(testimonial) {
           return `
               <div class="testimonial-card" data-id="${testimonial.id}">
@@ -131,23 +118,19 @@
           const track = document.getElementById('testimonial-track');
           const container = document.querySelector('.testimonial-slider-container');
           let isPaused = false;
-          let animationSpeed = 1; // pixels por frame
+          let animationSpeed = 1; 
           let position = 0;
           let animationId = null;
           
-          // Inicializa o carrossel
           function initCarousel() {
-              // Adiciona os cartões ao track (3 conjuntos para garantir o loop infinito)
               for (let i = 0; i < 3; i++) {
                   testimonials.forEach(testimonial => {
                       track.innerHTML += createTestimonialCard(testimonial);
                   });
               }
               
-              // Inicia a animação
               startAnimation();
               
-              // Adiciona eventos para pausar a animação
               container.addEventListener('mouseenter', () => {
                   isPaused = true;
               });
@@ -156,7 +139,6 @@
                   isPaused = false;
               });
               
-              // Reinicia a animação quando a página home é ativada
               $('a[data-page="home"]').on('click', function() {
                   if (animationId) {
                       cancelAnimationFrame(animationId);
@@ -167,7 +149,6 @@
               });
           }
           
-          // Função para animar o carrossel
           function startAnimation() {
               const cardWidth = 350; // Largura do cartão + margem
               const trackWidth = testimonials.length * cardWidth;
@@ -176,7 +157,6 @@
                   if (!isPaused) {
                       position -= animationSpeed;
                       
-                      // Se o primeiro conjunto de cartões sair completamente da tela, reseta a posição
                       if (Math.abs(position) >= trackWidth) {
                           position = 0;
                       }
@@ -190,7 +170,6 @@
               animationId = requestAnimationFrame(animate);
           }
           
-          // Inicializa quando a página for carregada
           if (track) {
               initCarousel();
           }
@@ -202,7 +181,6 @@
         }, 500);
     });
 
-// Função para verificar se o elemento está visível na viewport
 function isElementInViewport(el) {
     if (!el) return false;
     
@@ -212,13 +190,10 @@ function isElementInViewport(el) {
     );
 }
 
-// Função para animar os elementos da seção de informações
 function animateInfoSection() {
-    // Animar cada card com delay sequencial
     const infoCards = document.querySelectorAll('.info-card');
     infoCards.forEach(card => {
         if (isElementInViewport(card) && !card.classList.contains('visible')) {
-            // Aplica delay personalizado baseado no atributo data-delay
             const delay = parseInt(card.getAttribute('data-delay') || 0);
             setTimeout(() => {
                 card.classList.add('visible');
@@ -226,26 +201,20 @@ function animateInfoSection() {
         }
     });
     
-    // Animar o botão CTA
     const ctaContainer = document.querySelector('.cta-container');
     if (ctaContainer && isElementInViewport(ctaContainer) && !ctaContainer.classList.contains('visible')) {
         ctaContainer.classList.add('visible');
     }
 }
 
-// Inicializar animações quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', function() {
-    // Verificar animações no carregamento inicial
     setTimeout(animateInfoSection, 150);
     
-    // Verificar animações durante o scroll
     window.addEventListener('scroll', animateInfoSection, {passive: true});
     
-    // Reconfigurar animações ao voltar para a página home
     const homeLinks = document.querySelectorAll('a[data-page="home"]');
     homeLinks.forEach(link => {
         link.addEventListener('click', function() {
-            // Remover classes de visibilidade para permitir re-animação
             document.querySelectorAll('.info-card').forEach(card => {
                 card.classList.remove('visible');
             });
@@ -255,7 +224,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 ctaContainer.classList.remove('visible');
             }
             
-            // Verificar animações após pequeno delay
             setTimeout(animateInfoSection, 100);
         });
     });
