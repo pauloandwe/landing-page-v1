@@ -549,6 +549,7 @@ document.querySelectorAll('.brownie-item').forEach(item => {
 });
 }
 
+
 function sendWhatsAppOrder() {
 if (cart.length === 0) return;
 
