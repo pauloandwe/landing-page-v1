@@ -51,9 +51,7 @@
     </div>
 
 
-    <!-- Conteúdo das páginas -->
     <main id="page-content">
-        <!-- Página Home -->
         <div id="home" class="page">
             <section class="hero-section-first">
                 <div class="container hero-container">
@@ -536,6 +534,49 @@
             </section>
         </div>
     </main>
+
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: var(--primary-color); color: white;">
+              <h5 class="modal-title" id="productModalLabel">Selecione seus produtos</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row mb-4">
+                <div class="col-12">
+                  <div class="alert alert-light border" role="alert">
+                    <i class="fas fa-info-circle me-2" style="color: var(--secondary-color);"></i>
+                    Selecione os produtos e a quantidade desejada para fazer seu pedido
+                  </div>
+                </div>
+              </div>
+              
+              <div id="product-list" class="row">
+              </div>
+              
+              <hr class="my-4">
+              
+              <div id="order-summary" class="mt-4">
+                <h5 class="mb-3" style="color: var(--primary-color); font-weight: 600;">Resumo do Pedido</h5>
+                <div id="selected-products" class="mb-3">
+                  <p class="text-muted">Nenhum produto selecionado</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <h5>Total:</h5>
+                  <h5 id="total-price">R$ 0,00</h5>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button id="send-whatsapp" type="button" class="btn btn-success" disabled>
+                <i class="fab fa-whatsapp me-2"></i>Pedir pelo WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- Footer (constante em todas as rotas) -->
     <footer>

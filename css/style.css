@@ -1860,3 +1860,106 @@ footer {
         padding-top: 30px;
     }
 }
+
+.product-card-modal {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+  }
+  
+  .product-card-modal:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-image-modal {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .product-info-modal {
+    padding: 15px;
+  }
+  
+  .product-title-modal {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  .product-price-modal {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 15px;
+  }
+  
+  .quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .quantity-btn {
+    background-color: var(--light-color);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--primary-color);
+  }
+  
+  .quantity-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  
+  .quantity-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 0 10px;
+    height: 30px;
+  }
+  
+  .selected-product-item {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--light-color);
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #total-price {
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+  
+  #send-whatsapp {
+    background-color: #25D366;
+    border-color: #25D366;
+    font-weight: 600;
+  }
+  
+  #send-whatsapp:hover {
+    background-color: #20BA5C;
+    border-color: #20BA5C;
+  }
