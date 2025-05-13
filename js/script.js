@@ -1,9 +1,4 @@
-// Script principal do site com a modal de produtos integrada
-
-// Remove o preloader assim que o documento estiver pronto
 $(document).ready(function() {
-    // Remover o preloader imediatamente
-    removePreloader();
     
     // Inicialização da página
     $('#home').addClass('active');
@@ -55,7 +50,7 @@ function removePreloader() {
     // Certifica-se de que o preloader é completamente removido após a animação
     setTimeout(function() {
         $('.preloader').css('display', 'none');
-    }, 800);
+    }, 1000);
 }
 
 // Tentativa de remoção do preloader pelo evento load tradicional
@@ -145,7 +140,7 @@ function createTestimonialCard(testimonial) {
 // Inicializa o carrossel de depoimentos
 document.addEventListener('DOMContentLoaded', function() {
     // Força a remoção do preloader quando o DOM estiver pronto
-    removePreloader();
+    // removePreloader();
     
     const track = document.getElementById('testimonial-track');
     const container = document.querySelector('.testimonial-slider-container');
