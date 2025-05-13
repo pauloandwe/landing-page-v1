@@ -148,7 +148,6 @@ body {
     display: block;
 }
 
-/* Mais estilos CSS omitidos para brevidade, mas são os mesmos do arquivo original */
 .about-section {
     background-color: white;
     padding: 80px 0;
@@ -577,7 +576,7 @@ footer {
 
 
 .hero-section-first {
-    min-height: 600px;
+    min-height: 700px;
     display: flex;
     align-items: center;
     padding: 80px 0;
@@ -1319,15 +1318,6 @@ footer {
     }
 }
 
-
-
-@media (max-width: 820px) {
-    .hero-section-first {
-        padding-top: 150px;
-    }
-}
-
-
 @media (max-width: 991px) {
 
     .lead-1 {
@@ -1361,7 +1351,6 @@ footer {
     .lead-2 {
         font-size: 3.5rem;
     }
-
 
     .hero-description {
         font-size: 1.1rem;
@@ -1794,7 +1783,7 @@ footer {
 }
 
 .wave-invertida {
-    transform: rotate(180deg); /* Inverte a onda */
+    transform: rotate(180deg) translateY(-1px); /* Inverte a onda e desloca 5px para baixo */
 }
 
 .wave-divider-top {
@@ -1834,32 +1823,7 @@ footer {
     fill: var(--primary-color)
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .wave-divider svg {
-        height: 40px;
-    }
-    .wave-section {
-        padding-bottom: 40px;
-    }
-    .wave-section-bottom {
-        margin-top: -40px;
-        padding-top: 40px;
-    }
-}
 
-@media (max-width: 576px) {
-    .wave-divider svg {
-        height: 30px;
-    }
-    .wave-section {
-        padding-bottom: 30px;
-    }
-    .wave-section-bottom {
-        margin-top: -30px;
-        padding-top: 30px;
-    }
-}
 
 .product-card-modal {
     border-radius: 10px;
