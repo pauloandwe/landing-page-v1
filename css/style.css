@@ -1514,6 +1514,23 @@ footer {
 }
 
 
+.hero-section-about {
+    min-height: 530px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-section-product {
+    min-height: 530px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-section-ctt {
+    min-height: 530px;
+    overflow: hidden;
+    position: relative;
+}
 
 .hero-section-about::before {
     content: '';
@@ -1526,7 +1543,7 @@ footer {
     background-position: center;
     opacity: 0.2;
     z-index: 0;
-    height: 470px;
+    height: 530px;
 }
 
 .hero-section-product::before {
@@ -1540,7 +1557,7 @@ footer {
     background-position: center;
     opacity: 0.2;
     z-index: 0;
-    height: 470px;
+    height: 530px;
 }
 
 .hero-section-ctt::before {
@@ -1554,7 +1571,7 @@ footer {
     background-position: center;
     opacity: 0.2;
     z-index: 0;
-    height: 470px;
+    height: 530px;
 }
 
 /* Estilos para a seção de informações destacadas */
