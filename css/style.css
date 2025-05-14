@@ -1091,6 +1091,7 @@ footer {
     box-shadow: 0 8px 20px rgba(75, 46, 43, 0.2);
     font-weight: 600;
     display: inline-block;
+    text-decoration: none;
 }
 
 .btn-ver-todos:hover {
@@ -1782,6 +1783,16 @@ footer {
     z-index: 1;
 }
 
+.wave-divider-small {
+    position: absolute;
+    top: 465px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1;
+}
+
 .wave-invertida {
     transform: rotate(180deg) translateY(-1px); /* Inverte a onda e desloca 5px para baixo */
 }
@@ -1798,6 +1809,13 @@ footer {
 }
 
 .wave-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 70px;
+}
+
+.wave-divider-small svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
@@ -1927,3 +1945,65 @@ footer {
     background-color: #20BA5C;
     border-color: #20BA5C;
   }
+
+  .additional-info-section {
+    position: relative;
+    background-color: #ffff;
+    overflow: hidden;
+    padding-bottom: 65px;
+}
+
+.img-container {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.img-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.img-container img {
+    transition: transform 0.7s ease;
+}
+
+.img-container:hover img {
+    transform: scale(1.05);
+}
+
+.img-badge {
+    bottom: 20px;
+    right: -15px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transform: rotate(-2deg);
+    transition: all 0.4s ease;
+}
+
+.img-container:hover .img-badge {
+    transform: rotate(0deg) translateY(-5px);
+    background-color: var(--secondary-color);
+}
+
+.additional-content {
+    padding: 0 20px;
+}
+
+.feature-icon-sm {
+    transition: transform 0.4s ease;
+}
+
+.d-flex:hover .feature-icon-sm {
+    transform: scale(1.2) rotate(5deg);
+    color: var(--highlight-color);
+}
+
+@media (max-width: 991px) {
+    .additional-content {
+        padding-top: 30px;
+    }
+}
