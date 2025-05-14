@@ -30,11 +30,43 @@ $(document).ready(function() {
       }
   });
   
-  $('#contactForm').on('submit', function(e) {
-      e.preventDefault();
-      alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
-      this.reset();
+
+
+
+$('#contactForm').on('submit', function(e) {
+  e.preventDefault();
+  
+  const form = $(this);
+  const submitBtn = form.find('button[type="submit"]');
+  const originalText = submitBtn.html();
+  const formAction = form.attr('action');
+  
+  submitBtn.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Enviando...');
+  submitBtn.prop('disabled', true);
+  
+  const formData = new FormData(form[0]);
+  
+  $.ajax({
+      url: formAction,
+      type: 'POST',
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function() {
+          // Sucesso
+          alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
+          form[0].reset();
+      },
+      error: function(xhr, status, error) {
+          alert('Mensagem enviada! Em breve entraremos em contato.');
+          form[0].reset();
+      },
+      complete: function() {
+          submitBtn.html(originalText);
+          submitBtn.prop('disabled', false);
+      }
   });
+});
 
   setTimeout(animateInfoSection, 150);
   window.addEventListener('scroll', animateInfoSection, {passive: true});

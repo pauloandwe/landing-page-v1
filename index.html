@@ -85,7 +85,7 @@
 
                         <div class="brownie-item">
                             <a data-page="produtos">
-                                
+
                                 <div class="brownie-image">
                                     <img src="https://t3.ftcdn.net/jpg/02/69/57/22/360_F_269572238_Ke3L7nzIgvoftjLHGgnqFdTknRw5mWUw.jpg"
                                         alt="Brownie Tradicional">
@@ -582,29 +582,45 @@
                         <div class="col-lg-7">
                             <h2 class="section-title text-start">Envie sua Mensagem</h2>
                             <div class="contact-form">
-                                <form id="contactForm">
+
+                                <!-- Versão atualizada do HTML do formulário -->
+                                <!-- Substitua o formulário atual pelo código abaixo -->
+
+                                <form id="contactForm" action="https://formsubmit.co/pascs0703@gmail.com"
+                                    method="POST">
+                                    <!-- Campos ocultos para configuração do FormSubmit -->
+                                    <input type="hidden" name="_captcha" value="false">
+                                    <!-- Não inclua o _next para permitir que o AJAX processe sem redirecionamento -->
+                                    <input type="hidden" name="_subject" value="Nova mensagem do site Doces Cacau!">
+                                    <input type="hidden" name="_template" value="table">
+                                    <!-- Honeypot para evitar spam -->
+                                    <input type="text" name="_honey" style="display:none">
+
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for="name" class="form-label">Nome</label>
-                                            <input type="text" class="form-control" id="name" required>
+                                            <input type="text" class="form-control" id="name" name="name" required>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="email" class="form-label">E-mail</label>
-                                            <input type="email" class="form-control" id="email" required>
+                                            <input type="email" class="form-control" id="email" name="email" required>
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="subject" class="form-label">Assunto</label>
-                                        <input type="text" class="form-control" id="subject" required>
+                                        <input type="text" class="form-control" id="subject" name="subject" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="message" class="form-label">Mensagem</label>
-                                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                                        <textarea class="form-control" id="message" name="message" rows="5"
+                                            required></textarea>
                                     </div>
                                     <div class="text-end">
                                         <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
                                     </div>
                                 </form>
+
+
                             </div>
                         </div>
                     </div>
