@@ -92,13 +92,13 @@ require_once 'products.php';
                         foreach ($featuredItems as $index => $product) {
                             $isLarge = in_array($index, $largeItems) ? 'large' : '';
                         ?>
-                        <div class="brownie-item <?php echo $isLarge; ?>">
+                        <div class="brownie-item <?= $isLarge; ?>">
                             <a data-page="produtos">
                                 <div class="brownie-image">
-                                    <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>">
+                                    <img src="<?= $product['image']; ?>" alt="<?= $product['name']; ?>">
                                     <div class="brownie-overlay">
-                                        <h4><?php echo $product['name']; ?></h4>
-                                        <p><?php echo $product['description']; ?></p>
+                                        <h4><?= $product['name']; ?></h4>
+                                        <p><?= $product['description']; ?></p>
                                     </div>
                                 </div>
                             </a>
@@ -395,12 +395,12 @@ require_once 'products.php';
                         ?>
                         <div class="col-md-4 mb-4">
                             <div class="product-card">
-                                <div class="product-image" style="background-image: url('<?php echo $product['image']; ?>');">
+                                <div class="product-image" style="background-image: url('<?= $product['image']; ?>');">
                                 </div>
                                 <div class="product-info">
-                                    <h4 class="product-title"><?php echo $product['name']; ?></h4>
-                                    <p class="product-description"><?php echo $product['description']; ?></p>
-                                    <p class="product-price">R$ <?php echo number_format($product['price'], 2, ',', '.'); ?></p>
+                                    <h4 class="product-title"><?= $product['name']; ?></h4>
+                                    <p class="product-description"><?= $product['description']; ?></p>
+                                    <p class="product-price">R$ <?= number_format($product['price'], 2, ',', '.'); ?></p>
                                     <a href="#" data-page="loja" class="btn btn-sm btn-primary">Comprar</a>
                                 </div>
                             </div>
@@ -420,12 +420,12 @@ require_once 'products.php';
                         ?>
                         <div class="col-md-4 mb-4">
                             <div class="product-card">
-                                <div class="product-image" style="background-image: url('<?php echo $product['image']; ?>');">
+                                <div class="product-image" style="background-image: url('<?= $product['image']; ?>');">
                                 </div>
                                 <div class="product-info">
-                                    <h4 class="product-title"><?php echo $product['name']; ?></h4>
-                                    <p class="product-description"><?php echo $product['description']; ?></p>
-                                    <p class="product-price">R$ <?php echo number_format($product['price'], 2, ',', '.'); ?></p>
+                                    <h4 class="product-title"><?= $product['name']; ?></h4>
+                                    <p class="product-description"><?= $product['description']; ?></p>
+                                    <p class="product-price">R$ <?= number_format($product['price'], 2, ',', '.'); ?></p>
                                     <a href="#" data-page="loja" class="btn btn-sm btn-primary">Comprar</a>
                                 </div>
                             </div>
@@ -613,7 +613,7 @@ require_once 'products.php';
         </a>
     </div>
     <script>
-        const products = <?php echo json_encode($products); ?>;
+        const products = <?= json_encode($products); ?>;
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

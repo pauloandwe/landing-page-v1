@@ -9,9 +9,9 @@ $products = [
     ],
     [
         'id' => 2,
-        'name' => "Brownie com Nozes",
-        'price' => 10.90,
-        'image' => "https://www.academiaassai.com.br/sites/default/files/receita-de-brownie.jpg",
+        'name' => "Brownie com Nozes com Morango",
+        'price' => 20.90,
+        'image' => "https://imgs.search.brave.com/CpNcwncCjECZkHV6P4BICspkogk8wR_UX-KqQIGC8vw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzQzLzAxLzQ5/LzM2MF9GXzQzMDE0/OTI1X01NbnZ1dzZk/RklwOHlNZGtodDhs/T0xYUkdkcm5rRnJ4/LmpwZw",
         'description' => "A combinação perfeita de chocolate e nozes crocantes"
     ],
     [
@@ -42,13 +42,7 @@ $products = [
         'image' => "https://www.academiaassai.com.br/sites/default/files/receita-de-brownie.jpg",
         'description' => "Kit com 6 brownies sortidos para experimentar todos os sabores"
     ],
-    [
-        'id' => 7,
-        'name' => "Kit Brownie (6 unidades)",
-        'price' => 45.90,
-        'image' => "https://www.academiaassai.com.br/sites/default/files/receita-de-brownie.jpg",
-        'description' => "Kit com 6 brownies sortidos para experimentar todos os sabores"
-    ]
+
 ];
 
 if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {
