@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  // Remover os manipuladores de data-page, pois agora estamos usando rotas reais
   
   $(window).scroll(function() {
       if ($(this).scrollTop() > 50) {
