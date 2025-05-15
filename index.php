@@ -86,9 +86,8 @@ require_once 'products.php';
 
                         <div class="brownie-gallery">
                         <?php 
-                        // Exibir produtos em destaque
-                        $featuredItems = array_slice($products, 0, 7); // Pega os primeiros 7 produtos
-                        $largeItems = [1, 5]; // IDs dos itens que terão a classe 'large'
+                        $featuredItems = array_slice($products, 0, 7); 
+                        $largeItems = [1, 5]; 
                         
                         foreach ($featuredItems as $index => $product) {
                             $isLarge = in_array($index, $largeItems) ? 'large' : '';
