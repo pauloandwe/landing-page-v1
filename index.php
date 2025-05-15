@@ -1,3 +1,6 @@
+<?php
+require_once 'products.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -81,105 +84,27 @@
                     <p class="text-center mb-5">Brownies artesanais preparados com ingredientes selecionados e muito
                         amor</p>
 
-                    <div class="brownie-gallery">
-
-                        <div class="brownie-item">
+                        <div class="brownie-gallery">
+                        <?php 
+                        // Exibir produtos em destaque
+                        $featuredItems = array_slice($products, 0, 7); // Pega os primeiros 7 produtos
+                        $largeItems = [1, 5]; // IDs dos itens que terão a classe 'large'
+                        
+                        foreach ($featuredItems as $index => $product) {
+                            $isLarge = in_array($index, $largeItems) ? 'large' : '';
+                        ?>
+                        <div class="brownie-item <?php echo $isLarge; ?>">
                             <a data-page="produtos">
-
                                 <div class="brownie-image">
-                                    <img src="https://www.academiaassai.com.br/sites/default/files/receita-de-brownie.jpg"
-                                        alt="Brownie com Oreo">
+                                    <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>">
                                     <div class="brownie-overlay">
-                                        <h4>Brownie com Pote</h4>
-                                        <p>Deliciosa combinação de brownie com pedaços de Oreo</p>
+                                        <h4><?php echo $product['name']; ?></h4>
+                                        <p><?php echo $product['description']; ?></p>
                                     </div>
                                 </div>
                             </a>
                         </div>
-
-                        <div class="brownie-item large">
-                            <a data-page="produtos">
-
-                                <div class="brownie-image">
-                                    <img src="https://www.academiaassai.com.br/sites/default/files/receita-de-brownie.jpg"
-                                        alt="Bolo de Cenoura">
-                                    <div class="brownie-overlay">
-                                        <h4>Bolo de Cenoura</h4>
-                                        <p>A combinação perfeita de chocolate e nozes crocantes</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="brownie-item">
-                            <a data-page="produtos">
-
-                                <div class="brownie-image">
-                                    <img src="https://www.academiaassai.com.br/sites/default/files/receita-de-brownie.jpg"
-                                        alt="Brownie com Oreo">
-                                    <div class="brownie-overlay">
-                                        <h4>Brownie com Pote</h4>
-                                        <p>Deliciosa combinação de brownie com pedaços de Oreo</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="brownie-item">
-                            <a data-page="produtos">
-
-                                <div class="brownie-image">
-                                    <img src="https://www.academiaassai.com.br/sites/default/files/receita-de-brownie.jpg"
-                                        alt="Brownie com Oreo">
-                                    <div class="brownie-overlay">
-                                        <h4>Brownie com Pote</h4>
-                                        <p>Deliciosa combinação de brownie com pedaços de Oreo</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="brownie-item">
-                            <a data-page="produtos">
-
-                                <div class="brownie-image">
-                                    <img src="https://www.academiaassai.com.br/sites/default/files/receita-de-brownie.jpg"
-                                        alt="Brownie com Oreo">
-                                    <div class="brownie-overlay">
-                                        <h4>Brownie com Pote</h4>
-                                        <p>Deliciosa combinação de brownie com pedaços de Oreo</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="brownie-item large">
-                            <a data-page="produtos">
-
-                                <div class="brownie-image">
-                                    <img src="https://www.academiaassai.com.br/sites/default/files/receita-de-brownie.jpg"
-                                        alt="Brownies Especiais">
-                                    <div class="brownie-overlay">
-                                        <h4>Brownies de Doce de Leite</h4>
-                                        <p>Experimente nossas criações exclusivas para ocasiões especiais</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="brownie-item">
-                            <a data-page="produtos">
-
-                                <div class="brownie-image">
-                                    <img src="https://www.academiaassai.com.br/sites/default/files/receita-de-brownie.jpg"
-                                        alt="Brownie com Oreo">
-                                    <div class="brownie-overlay">
-                                        <h4>Brownie com Pote</h4>
-                                        <p>Deliciosa combinação de brownie com pedaços de Oreo</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                        <?php } ?>
                     </div>
 
                         <div class="text-center mt-5">
@@ -463,94 +388,50 @@
 
             <section class="py-5 bg-white">
                 <div class="container">
-                    <h2 class="section-title">Trufas e Bombons</h2>
+                    <h2 class="section-title">Brownies Especiais</h2>
                     <div class="row">
+                        <?php 
+                        // Exibe todos os produtos
+                        foreach (array_slice($products, 0, 3) as $product) { 
+                        ?>
                         <div class="col-md-4 mb-4">
                             <div class="product-card">
-                                <div class="product-image" style="background-image: url('/api/placeholder/400/250');">
+                                <div class="product-image" style="background-image: url('<?php echo $product['image']; ?>');">
                                 </div>
                                 <div class="product-info">
-                                    <h4 class="product-title">Trufa Tradicional</h4>
-                                    <p class="product-description">Deliciosa trufa de chocolate meio amargo recheada com
-                                        ganache especial.</p>
-                                    <p class="product-price">R$ 8,90</p>
+                                    <h4 class="product-title"><?php echo $product['name']; ?></h4>
+                                    <p class="product-description"><?php echo $product['description']; ?></p>
+                                    <p class="product-price">R$ <?php echo number_format($product['price'], 2, ',', '.'); ?></p>
                                     <a href="#" data-page="loja" class="btn btn-sm btn-primary">Comprar</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image" style="background-image: url('/api/placeholder/400/250');">
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Bombom Brasileiro</h4>
-                                    <p class="product-description">Bombom com recheio de brigadeiro e cobertura de
-                                        chocolate belga.</p>
-                                    <p class="product-price">R$ 9,50</p>
-                                    <a href="#" data-page="loja" class="btn btn-sm btn-primary">Comprar</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image" style="background-image: url('/api/placeholder/400/250');">
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Trufa de Café</h4>
-                                    <p class="product-description">Trufa com ganache de chocolate e café premium,
-                                        finalizada com pó de cacau.</p>
-                                    <p class="product-price">R$ 9,90</p>
-                                    <a href="#" data-page="loja" class="btn btn-sm btn-primary">Comprar</a>
-                                </div>
-                            </div>
-                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </section>
 
             <section class="py-5" style="background-color: var(--light-color);">
                 <div class="container">
-                    <h2 class="section-title">Barras Artesanais</h2>
+                    <h2 class="section-title">Outros Produtos</h2>
                     <div class="row">
+                        <?php 
+                        // Exibe o restante dos produtos
+                        foreach (array_slice($products, 3) as $product) { 
+                        ?>
                         <div class="col-md-4 mb-4">
                             <div class="product-card">
-                                <div class="product-image" style="background-image: url('/api/placeholder/400/250');">
+                                <div class="product-image" style="background-image: url('<?php echo $product['image']; ?>');">
                                 </div>
                                 <div class="product-info">
-                                    <h4 class="product-title">Barra Gourmet 70%</h4>
-                                    <p class="product-description">Barra de chocolate 70% cacau com pedaços de frutas
-                                        secas.</p>
-                                    <p class="product-price">R$ 22,90</p>
+                                    <h4 class="product-title"><?php echo $product['name']; ?></h4>
+                                    <p class="product-description"><?php echo $product['description']; ?></p>
+                                    <p class="product-price">R$ <?php echo number_format($product['price'], 2, ',', '.'); ?></p>
                                     <a href="#" data-page="loja" class="btn btn-sm btn-primary">Comprar</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image" style="background-image: url('/api/placeholder/400/250');">
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Barra Crocante</h4>
-                                    <p class="product-description">Chocolate ao leite com mix de castanhas
-                                        caramelizadas.</p>
-                                    <p class="product-price">R$ 19,90</p>
-                                    <a href="#" data-page="loja" class="btn btn-sm btn-primary">Comprar</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image" style="background-image: url('/api/placeholder/400/250');">
-                                </div>
-                                <div class="product-info">
-                                    <h4 class="product-title">Barra Branca</h4>
-                                    <p class="product-description">Chocolate branco cremoso com pedaços de morango
-                                        liofilizado.</p>
-                                    <p class="product-price">R$ 24,90</p>
-                                    <a href="#" data-page="loja" class="btn btn-sm btn-primary">Comprar</a>
-                                </div>
-                            </div>
-                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </section>
@@ -732,7 +613,9 @@
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
-
+    <script>
+        const products = <?php echo json_encode($products); ?>;
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
