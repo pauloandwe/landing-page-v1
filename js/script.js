@@ -1,26 +1,5 @@
 $(document).ready(function() {
-    
-  $('#home').addClass('active');
-  $('a[data-page="home"]').addClass('active');
-  
-  $('a[data-page]').on('click', function(e) {
-      e.preventDefault();
-      
-      var pageId = $(this).data('page');
-      
-      if (pageId === 'loja') {
-          openShopModal();
-          return;
-      }
-      
-      $('.page').removeClass('active');
-      $('.nav-link').removeClass('active');
-      
-      $('a[data-page="' + pageId + '"]').addClass('active');
-      $('#' + pageId).addClass('active');
-      
-      window.scrollTo(0, 0);
-  });
+  // Remover os manipuladores de data-page, pois agora estamos usando rotas reais
   
   $(window).scroll(function() {
       if ($(this).scrollTop() > 50) {
@@ -30,44 +9,44 @@ $(document).ready(function() {
       }
   });
   
-$('#contactForm').on('submit', function(e) {
-  e.preventDefault();
-  
-  const form = $(this);
-  const submitBtn = form.find('button[type="submit"]');
-  const originalText = submitBtn.html();
-  const formAction = form.attr('action');
-  
-  submitBtn.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Enviando...');
-  submitBtn.prop('disabled', true);
-  
-  const formData = new FormData(form[0]);
-  
-  $.ajax({
-      url: formAction,
-      type: 'POST',
-      data: formData,
-      processData: false,
-      contentType: false,
-      success: function() {
-          // Sucesso
-          alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
-          form[0].reset();
-      },
-      error: function(xhr, status, error) {
-          alert('Mensagem enviada! Em breve entraremos em contato.');
-          form[0].reset();
-      },
-      complete: function() {
-          submitBtn.html(originalText);
-          submitBtn.prop('disabled', false);
-      }
+  $('#contactForm').on('submit', function(e) {
+      e.preventDefault();
+      
+      const form = $(this);
+      const submitBtn = form.find('button[type="submit"]');
+      const originalText = submitBtn.html();
+      const formAction = form.attr('action');
+      
+      submitBtn.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Enviando...');
+      submitBtn.prop('disabled', true);
+      
+      const formData = new FormData(form[0]);
+      
+      $.ajax({
+          url: formAction,
+          type: 'POST',
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function() {
+              alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
+              form[0].reset();
+          },
+          error: function(xhr, status, error) {
+              alert('Mensagem enviada! Em breve entraremos em contato.');
+              form[0].reset();
+          },
+          complete: function() {
+              submitBtn.html(originalText);
+              submitBtn.prop('disabled', false);
+          }
+      });
   });
-});
 
   setTimeout(animateInfoSection, 150);
   window.addEventListener('scroll', animateInfoSection, {passive: true});
   
+  // Inicializar o modal de produtos
   initProductModal();
 });
 
@@ -87,6 +66,7 @@ setTimeout(function() {
   removePreloader();
 }, 2000);
 
+// Testimonials
 const testimonials = [
   {
       id: 1,
@@ -159,7 +139,6 @@ function createTestimonialCard(testimonial) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  
   const track = document.getElementById('testimonial-track');
   const container = document.querySelector('.testimonial-slider-container');
   
@@ -184,15 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
           
           container.addEventListener('mouseleave', () => {
               isPaused = false;
-          });
-          
-          $('a[data-page="home"]').on('click', function() {
-              if (animationId) {
-                  cancelAnimationFrame(animationId);
-              }
-              position = 0;
-              track.style.transform = `translateX(0px)`;
-              startAnimation();
           });
       }
       
@@ -247,25 +217,7 @@ function animateInfoSection() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  const homeLinks = document.querySelectorAll('a[data-page="home"]');
-  homeLinks.forEach(link => {
-      link.addEventListener('click', function() {
-          document.querySelectorAll('.info-card').forEach(card => {
-              card.classList.remove('visible');
-          });
-          
-          const ctaContainer = document.querySelector('.cta-container');
-          if (ctaContainer) {
-              ctaContainer.classList.remove('visible');
-          }
-          
-          setTimeout(animateInfoSection, 100);
-      });
-  });
-});
-
-
+// Produto modal e carrinho
 let cart = [];
 let total = 0;
 let productModal;
@@ -274,37 +226,26 @@ function openShopModal() {
   cart = [];
 
   setTimeout(() => {
-    document.querySelectorAll('.quantity-input').forEach(input => {
-      input.value = 0;
-    });
+      document.querySelectorAll('.quantity-input').forEach(input => {
+          input.value = 0;
+      });
   }, 300);
 
   updateOrderSummary();
-
   productModal.show();
 }
 
 function initProductModal() {
-  productModal = new bootstrap.Modal(document.getElementById('productModal'), {
-    backdrop: 'static' 
+  const modalElement = document.getElementById('productModal');
+  if (!modalElement) return;
+
+  productModal = new bootstrap.Modal(modalElement, {
+      backdrop: 'static' 
   });
 
   loadProductsInModal();
-
   document.getElementById('send-whatsapp').addEventListener('click', sendWhatsAppOrder);
-
   setupBuyButtons();
-
-  const modalElement = document.getElementById('productModal');
-  modalElement.addEventListener('show.bs.modal', function() {
-    window.scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    
-    window.scrollTo({top: 0, behavior: 'smooth'});
-    
-    setTimeout(() => {
-      updateOrderSummary();
-    }, 100);
-  });
 }
 
 function loadProductsInModal() {
@@ -314,24 +255,24 @@ function loadProductsInModal() {
   productList.innerHTML = '';
 
   products.forEach(product => {
-    const productCard = document.createElement('div');
-    productCard.className = 'col-md-4 col-sm-6 mb-4'; 
-    productCard.innerHTML = `
-      <div class="product-card-modal" data-id="${product.id}">
-        <div class="product-image-modal" style="background-image: url('${product.image}');"></div>
-        <div class="product-info-modal">
-          <h4 class="product-title-modal">${product.name}</h4>
-          <p class="product-price-modal">R$ ${product.price.toFixed(2).replace('.', ',')}</p>
-          <p class="small text-muted">${product.description}</p>
-          <div class="quantity-control">
-            <button class="quantity-btn decrease" data-id="${product.id}">-</button>
-            <input type="number" class="quantity-input" data-id="${product.id}" value="0" min="0" max="20">
-            <button class="quantity-btn increase" data-id="${product.id}">+</button>
+      const productCard = document.createElement('div');
+      productCard.className = 'col-md-4 col-sm-6 mb-4'; 
+      productCard.innerHTML = `
+          <div class="product-card-modal" data-id="${product.id}">
+              <div class="product-image-modal" style="background-image: url('${product.image}');"></div>
+              <div class="product-info-modal">
+                  <h4 class="product-title-modal">${product.name}</h4>
+                  <p class="product-price-modal">R$ ${product.price.toFixed(2).replace('.', ',')}</p>
+                  <p class="small text-muted">${product.description}</p>
+                  <div class="quantity-control">
+                      <button class="quantity-btn decrease" data-id="${product.id}">-</button>
+                      <input type="number" class="quantity-input" data-id="${product.id}" value="0" min="0" max="20">
+                      <button class="quantity-btn increase" data-id="${product.id}">+</button>
+                  </div>
+              </div>
           </div>
-        </div>
-      </div>
-    `;
-    productList.appendChild(productCard);
+      `;
+      productList.appendChild(productCard);
   });
 
   setupQuantityControls();
@@ -339,69 +280,67 @@ function loadProductsInModal() {
 
 function setupQuantityControls() {
   document.querySelectorAll('.increase').forEach(button => {
-    button.addEventListener('click', function() {
-      const productId = this.getAttribute('data-id');
-      const input = document.querySelector(`.quantity-input[data-id="${productId}"]`);
-      let currentValue = parseInt(input.value);
-      
-      if (currentValue < 20) {
-        input.value = currentValue + 1;
-        updateCart(productId, currentValue + 1);
-      }
-    });
+      button.addEventListener('click', function() {
+          const productId = this.getAttribute('data-id');
+          const input = document.querySelector(`.quantity-input[data-id="${productId}"]`);
+          let currentValue = parseInt(input.value);
+          
+          if (currentValue < 20) {
+              input.value = currentValue + 1;
+              updateCart(productId, currentValue + 1);
+          }
+      });
   });
 
   document.querySelectorAll('.decrease').forEach(button => {
-    button.addEventListener('click', function() {
-      const productId = this.getAttribute('data-id');
-      const input = document.querySelector(`.quantity-input[data-id="${productId}"]`);
-      let currentValue = parseInt(input.value);
-      
-      if (currentValue > 0) {
-        input.value = currentValue - 1;
-        updateCart(productId, currentValue - 1);
-      }
-    });
+      button.addEventListener('click', function() {
+          const productId = this.getAttribute('data-id');
+          const input = document.querySelector(`.quantity-input[data-id="${productId}"]`);
+          let currentValue = parseInt(input.value);
+          
+          if (currentValue > 0) {
+              input.value = currentValue - 1;
+              updateCart(productId, currentValue - 1);
+          }
+      });
   });
 
   document.querySelectorAll('.quantity-input').forEach(input => {
-    input.addEventListener('change', function() {
-      const productId = this.getAttribute('data-id');
-      let currentValue = parseInt(this.value);
-      
-      if (isNaN(currentValue) || currentValue < 0) {
-        currentValue = 0;
-        this.value = 0;
-      } else if (currentValue > 20) {
-        currentValue = 20;
-        this.value = 20;
-      }
-      
-      updateCart(productId, currentValue);
-    });
+      input.addEventListener('change', function() {
+          const productId = this.getAttribute('data-id');
+          let currentValue = parseInt(this.value);
+          
+          if (isNaN(currentValue) || currentValue < 0) {
+              currentValue = 0;
+              this.value = 0;
+          } else if (currentValue > 20) {
+              currentValue = 20;
+              this.value = 20;
+          }
+          
+          updateCart(productId, currentValue);
+      });
   });
 }
 
 function updateCart(productId, quantity) {
   productId = parseInt(productId);
-
   const product = products.find(p => p.id === productId);
-
   const existingItem = cart.find(item => item.id === productId);
 
   if (quantity > 0) {
-    if (existingItem) {
-      existingItem.quantity = quantity;
-    } else {
-      cart.push({
-        id: productId,
-        name: product.name,
-        price: product.price,
-        quantity: quantity
-      });
-    }
+      if (existingItem) {
+          existingItem.quantity = quantity;
+      } else {
+          cart.push({
+              id: productId,
+              name: product.name,
+              price: product.price,
+              quantity: quantity
+          });
+      }
   } else if (existingItem) {
-    cart = cart.filter(item => item.id !== productId);
+      cart = cart.filter(item => item.id !== productId);
   }
 
   updateOrderSummary();
@@ -415,121 +354,134 @@ function updateOrderSummary() {
   if (!selectedProductsElement || !totalPriceElement || !whatsappButton) return;
 
   selectedProductsElement.innerHTML = '';
-
   total = 0;
 
   if (cart.length === 0) {
-    selectedProductsElement.innerHTML = '<p class="text-muted">Nenhum produto selecionado</p>';
-    whatsappButton.disabled = true;
+      selectedProductsElement.innerHTML = '<p class="text-muted">Nenhum produto selecionado</p>';
+      whatsappButton.disabled = true;
   } else {
-    cart.forEach(item => {
-      const itemTotal = item.price * item.quantity;
-      total += itemTotal;
+      cart.forEach(item => {
+          const itemTotal = item.price * item.quantity;
+          total += itemTotal;
+          
+          const productElement = document.createElement('div');
+          productElement.className = 'selected-product-item';
+          productElement.innerHTML = `
+              <div>
+                  <span class="fw-bold">${item.quantity}x</span> ${item.name}
+              </div>
+              <div>
+                  R$ ${itemTotal.toFixed(2).replace('.', ',')}
+              </div>
+          `;
+          
+          selectedProductsElement.appendChild(productElement);
+      });
       
-      const productElement = document.createElement('div');
-      productElement.className = 'selected-product-item';
-      productElement.innerHTML = `
-        <div>
-          <span class="fw-bold">${item.quantity}x</span> ${item.name}
-        </div>
-        <div>
-          R$ ${itemTotal.toFixed(2).replace('.', ',')}
-        </div>
-      `;
-      
-      selectedProductsElement.appendChild(productElement);
-    });
-    
-    whatsappButton.disabled = false;
+      whatsappButton.disabled = false;
   }
 
   totalPriceElement.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
 }
 
 function setupBuyButtons() {
-  document.querySelectorAll('.product-card .btn').forEach(button => {
-    button.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      cart = [];
-      
-      if (this.closest('.product-card')) {
-        const productTitle = this.closest('.product-card').querySelector('.product-title').textContent;
-        const product = products.find(p => p.name === productTitle || productTitle.includes(p.name));
-        
-        if (product) {
-          cart.push({
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            quantity: 1
-          });
+  // Atualizar para trabalhar com links reais em vez de data-page
+  document.querySelectorAll('.shop-button').forEach(button => {
+      button.addEventListener('click', function(e) {
+          e.preventDefault();
           
-          setTimeout(() => {
-            document.querySelectorAll('.quantity-input').forEach(input => {
-              if (parseInt(input.getAttribute('data-id')) === product.id) {
-                input.value = 1;
-              } else {
-                input.value = 0;
+          cart = [];
+          
+          if (this.closest('.product-card')) {
+              const productTitle = this.closest('.product-card').querySelector('.product-title').textContent;
+              const product = products.find(p => p.name === productTitle || productTitle.includes(p.name));
+              
+              if (product) {
+                  cart.push({
+                      id: product.id,
+                      name: product.name,
+                      price: product.price,
+                      quantity: 1
+                  });
+                  
+                  setTimeout(() => {
+                      document.querySelectorAll('.quantity-input').forEach(input => {
+                          if (parseInt(input.getAttribute('data-id')) === product.id) {
+                              input.value = 1;
+                          } else {
+                              input.value = 0;
+                          }
+                      });
+                  }, 300);
               }
-            });
-          }, 300);
-        }
-      } else {
-        setTimeout(() => {
-          document.querySelectorAll('.quantity-input').forEach(input => {
-            input.value = 0;
-          });
-        }, 300);
-      }
-      
-      updateOrderSummary();
-      
-      productModal.show();
-    });
-  });
-
-  document.querySelector('.btn-ver-todos').addEventListener('click', function(e) {
-    e.preventDefault();
-    openShopModal();
-  });
-
-  document.querySelector('.hero-section-first .btn-primary').addEventListener('click', function(e) {
-    e.preventDefault();
-    openShopModal();
-  });
-
-  document.querySelectorAll('.brownie-item').forEach(item => {
-    item.addEventListener('click', function(e) {
-      const title = this.querySelector('h4').textContent;
-      const product = products.find(p => p.name === title || title.includes(p.name) || p.name.includes(title));
-      
-      if (product) {
-        cart = [{
-          id: product.id,
-          name: product.name,
-          price: product.price,
-          quantity: 1
-        }];
-        
-        setTimeout(() => {
-          document.querySelectorAll('.quantity-input').forEach(input => {
-            if (parseInt(input.getAttribute('data-id')) === product.id) {
-              input.value = 1;
-            } else {
-              input.value = 0;
-            }
-          });
+          } else {
+              setTimeout(() => {
+                  document.querySelectorAll('.quantity-input').forEach(input => {
+                      input.value = 0;
+                  });
+              }, 300);
+          }
+          
           updateOrderSummary();
-        }, 300);
-        
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        
-        setTimeout(() => {
           productModal.show();
-        }, 300);
-      }
-    });
+      });
+  });
+
+  // "Ver Todos" botão
+  const btnVerTodos = document.querySelector('.btn-ver-todos');
+  if (btnVerTodos) {
+      btnVerTodos.addEventListener('click', function(e) {
+          if (window.location.pathname === '/') {
+              e.preventDefault();
+              openShopModal();
+          }
+      });
+  }
+
+  // "Explorar Sabores" botão na home
+  const exploreBtn = document.querySelector('.hero-section-first .btn-primary');
+  if (exploreBtn) {
+      exploreBtn.addEventListener('click', function(e) {
+          if (window.location.pathname === '/') {
+              e.preventDefault();
+              openShopModal();
+          }
+      });
+  }
+
+  // Brownie items na galeria
+  document.querySelectorAll('.brownie-item').forEach(item => {
+      item.addEventListener('click', function(e) {
+          const title = this.querySelector('h4').textContent;
+          const product = products.find(p => p.name === title || title.includes(p.name) || p.name.includes(title));
+          
+          if (product) {
+              e.preventDefault();
+              cart = [{
+                  id: product.id,
+                  name: product.name,
+                  price: product.price,
+                  quantity: 1
+              }];
+              
+              setTimeout(() => {
+                  document.querySelectorAll('.quantity-input').forEach(input => {
+                      if (parseInt(input.getAttribute('data-id')) === product.id) {
+                          input.value = 1;
+                      } else {
+                          input.value = 0;
+                      }
+                  });
+                  updateOrderSummary();
+              }, 300);
+              
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              
+              setTimeout(() => {
+                  productModal.show();
+              }, 300);
+          }
+      });
   });
 }
 
@@ -539,21 +491,19 @@ function sendWhatsAppOrder() {
   let message = "Olá! Gostaria de fazer o seguinte pedido:\n\n";
 
   cart.forEach(item => {
-    message += `• ${item.quantity}x ${item.name} - R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}\n`;
+      message += `• ${item.quantity}x ${item.name} - R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}\n`;
   });
 
   message += `\nTotal: R$ ${total.toFixed(2).replace('.', ',')}`;
   message += "\n\nPor favor, poderia me confirmar este pedido e informar o prazo de entrega?";
 
   const encodedMessage = encodeURIComponent(message);
-
   const whatsappNumber = "5511999988888";
-
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
   productModal.hide();
 
   setTimeout(() => {
-    window.open(whatsappUrl, '_blank');
+      window.open(whatsappUrl, '_blank');
   }, 300);
 }
