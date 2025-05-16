@@ -43,11 +43,11 @@ require_once 'products.php';
         </div>
     </nav>
 
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="loader">
             <div class="loader-inner"></div>
         </div>
-    </div>
+    </div> -->
 
     <main id="page-content">
         <?php

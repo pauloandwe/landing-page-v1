@@ -1073,7 +1073,7 @@ footer {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.5s ease-out, visibility 0.5s;
+    transition: opacity 0.5s ease-out, visibility 0.5s;    
 }
 
 .preloader.fade-out {
