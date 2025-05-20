@@ -40,14 +40,7 @@
                         <div class="about-image main-image">
                             <img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" alt="Nossa história" class="img-fluid shadow-lg rounded-lg">
                         </div>
-                        <div class="about-image floating-image-1">
-                            <img src="https://media.istockphoto.com/id/1130692246/photo/homemade-chocolate-brownies-shot-from-above.jpg?s=612x612&w=0&k=20&c=vwXHR_DXORJNqHA8ufMhD38y4YqfPvChZioxT0bZjQQ=" alt="Nossos brownies" class="img-fluid shadow rounded-circle">
-                            <div class="image-badge">Feito com amor</div>
-                        </div>
-                        <div class="about-image floating-image-2">
-                            <img src="https://i.pinimg.com/originals/76/b2/79/76b2799fcd3c8b77e6e0e83a98af8657.jpg" alt="Ingredientes selecionados" class="img-fluid shadow rounded-circle">
-                            <div class="image-badge">Desde 2010</div>
-                        </div>
+                       
                     </div>
                 </div>
                 
@@ -121,7 +114,7 @@
             <p class="text-center mb-5">Conheça como transformamos os melhores ingredientes em brownies irresistíveis</p>
             
             <div class="row mt-5">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 item-col">
                     <div class="process-card">
                         <div class="process-icon">
                             <i class="fas fa-leaf"></i>
@@ -723,7 +716,7 @@
 }
 
 .testimonial-about-text:before {
-    content: """;
+    content: "";
     position: absolute;
     left: 0;
     top: -10px;
@@ -910,6 +903,12 @@
     position: relative;
     z-index: 1;
 }
+
+
+.process-section {
+    margin-top: 40px;
+}
+
 
 /* Responsividade */
 @media (max-width: 991px) {
