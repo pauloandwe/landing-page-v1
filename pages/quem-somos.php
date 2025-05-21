@@ -341,30 +341,30 @@
                 <div class="row justify-content-center">
                     <div class="col-6 col-md-3 mb-4">
                         <div class="media-badge">
-                            <img src="/api/placeholder/120/60" alt="Revista Gastronomia" class="media-badge-img">
+                            <img height="250px" src="https://imgs.search.brave.com/cdzG1WM6qr7E4fHxswvIXGMK1NVcJPsrcvYk_kB_Ruw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzkxOHFpR3VaMFhT/LmpwZw" alt="Revista Gastronomia" class="media-badge-img">
                             <p class="media-badge-text">"Os melhores brownies artesanais do Brasil"</p>
                             <span class="media-source">Revista Gastronomia, 2023</span>
                         </div>
                     </div>
                     <div class="col-6 col-md-3 mb-4">
                         <div class="media-badge">
-                            <img src="/api/placeholder/120/60" alt="Blog Doces & Sabores" class="media-badge-img">
-                            <p class="media-badge-text">"Doces que conquistam pelo sabor e história"</p>
-                            <span class="media-source">Blog Doces & Sabores, 2022</span>
+                            <img height="250px" src="https://imgs.search.brave.com/cdzG1WM6qr7E4fHxswvIXGMK1NVcJPsrcvYk_kB_Ruw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzkxOHFpR3VaMFhT/LmpwZw" alt="Revista Gastronomia" class="media-badge-img">
+                            <p class="media-badge-text">"Os melhores brownies artesanais do Brasil"</p>
+                            <span class="media-source">Revista Gastronomia, 2023</span>
                         </div>
                     </div>
                     <div class="col-6 col-md-3 mb-4">
                         <div class="media-badge">
-                            <img src="/api/placeholder/120/60" alt="Portal Confeitaria" class="media-badge-img">
-                            <p class="media-badge-text">"Emprendedorismo doce que deu certo"</p>
-                            <span class="media-source">Portal Confeitaria, 2021</span>
+                            <img height="250px" src="https://imgs.search.brave.com/cdzG1WM6qr7E4fHxswvIXGMK1NVcJPsrcvYk_kB_Ruw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzkxOHFpR3VaMFhT/LmpwZw" alt="Revista Gastronomia" class="media-badge-img">
+                            <p class="media-badge-text">"Os melhores brownies artesanais do Brasil"</p>
+                            <span class="media-source">Revista Gastronomia, 2023</span>
                         </div>
                     </div>
                     <div class="col-6 col-md-3 mb-4">
                         <div class="media-badge">
-                            <img src="/api/placeholder/120/60" alt="Prêmio Chocolate" class="media-badge-img">
-                            <p class="media-badge-text">"Top 10 confeitarias artesanais"</p>
-                            <span class="media-source">Prêmio Chocolate, 2020</span>
+                            <img height="250px" src="https://imgs.search.brave.com/cdzG1WM6qr7E4fHxswvIXGMK1NVcJPsrcvYk_kB_Ruw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzkxOHFpR3VaMFhT/LmpwZw" alt="Revista Gastronomia" class="media-badge-img">
+                            <p class="media-badge-text">"Os melhores brownies artesanais do Brasil"</p>
+                            <span class="media-source">Revista Gastronomia, 2023</span>
                         </div>
                     </div>
                 </div>

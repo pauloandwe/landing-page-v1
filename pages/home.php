@@ -30,10 +30,6 @@
             </div>
         </div>
 
-        <div class="promo-float-banner">
-            <i class="fas fa-tags me-2"></i> Use o cupom <strong>BROWNIE10</strong> e ganhe 10% OFF no primeiro pedido!
-        </div>
-
         <div class="wave-divider wave-white wave-invertida">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="shape-fill"></path>
@@ -350,10 +346,6 @@
 </div>
 
 <style>
-    /* Estilos específicos para a página home */
-    .hero-badge {
-        animation: float 3s infinite ease-in-out;
-    }
 
     .delivery-info {
         color: rgba(255, 255, 255, 0.9);
@@ -762,12 +754,6 @@
 <script>
     // Script para animação e funcionalidades da página
     document.addEventListener('DOMContentLoaded', function() {
-        // Animação para elementos flutuantes
-        const floatElements = document.querySelectorAll('.hero-badge, .promo-float-banner');
-        floatElements.forEach(element => {
-            element.style.animation = 'float 3s infinite ease-in-out';
-        });
-
         // Adiciona contador regressivo nos itens com estoque limitado
         const stockWarnings = document.querySelectorAll('.stock-warning');
         stockWarnings.forEach(warning => {
