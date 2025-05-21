@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     <div class="card shadow-sm">
-                        <div class="card-header bg-primary text-white">
+                        <div class="card-header text-white" style="background-color: var(--primary-color);">
                             <h5 class="mb-0">Resumo do Pedido</h5>
                         </div>
                         <div class="card-body">

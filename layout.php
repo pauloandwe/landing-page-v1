@@ -19,7 +19,7 @@ require_once 'products.php';
 <body>
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="/">SOMOS APAIXONADOS POR BROWNIES</a>
+            <a class="navbar-brand" href="">SOMOS APAIXONADOS POR BROWNIES</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,16 +27,16 @@ require_once 'products.php';
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link <?= $page === 'home' ? 'active' : '' ?>" href="/home">HOME</a>
+                        <a class="nav-link <?= $page === 'home' ? 'active' : '' ?>" href="home">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= $page === 'quem-somos' ? 'active' : '' ?>" href="/quem-somos">QUEM SOMOS</a>
+                        <a class="nav-link <?= $page === 'quem-somos' ? 'active' : '' ?>" href="quem-somos">QUEM SOMOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= $page === 'produtos' ? 'active' : '' ?>" href="/produtos">PRODUTOS</a>
+                        <a class="nav-link <?= $page === 'produtos' ? 'active' : '' ?>" href="produtos">PRODUTOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= $page === 'contato' ? 'active' : '' ?>" href="/contato">CONTATO</a>
+                        <a class="nav-link <?= $page === 'contato' ? 'active' : '' ?>" href="contato">CONTATO</a>
                     </li>
                 </ul>
             </div>
@@ -127,11 +127,11 @@ require_once 'products.php';
                 <div class="col-lg-4 mb-4">
                     <h4 class="footer-title">Links Rápidos</h4>
                     <ul class="list-unstyled footer-links">
-                        <li><a href="/home">Home</a></li>
-                        <li><a href="/quem-somos">Quem Somos</a></li>
-                        <li><a href="/produtos">Produtos</a></li>
-                        <li><a href="/loja">Loja Virtual</a></li>
-                        <li><a href="/contato">Contato</a></li>
+                        <li><a href="home">Home</a></li>
+                        <li><a href="quem-somos">Quem Somos</a></li>
+                        <li><a href="produtos">Produtos</a></li>
+                        <li><a href="loja">Loja Virtual</a></li>
+                        <li><a href="contato">Contato</a></li>
                     </ul>
                 </div>
             </div>

@@ -158,7 +158,7 @@
                             
                             <!-- CTA Melhorado -->
                             <div class="product-action">
-                                <a href="/loja" class="btn btn-primary shop-button"><i class="fas fa-shopping-bag me-2"></i>Comprar</a>
+                                <a href="loja" class="btn btn-primary shop-button"><i class="fas fa-shopping-bag me-2"></i>Comprar</a>
                                 <button class="btn-wishlist" data-bs-toggle="tooltip" title="Adicionar aos favoritos">
                                     <i class="far fa-heart"></i>
                                 </button>
@@ -179,7 +179,7 @@
                     <h3 class="promo-title">EXPERIMENTE NOSSO COMBO DEGUSTAÇÃO</h3>
                     <p class="promo-description">6 mini brownies com diferentes sabores para você conhecer toda nossa linha!</p>
                     <div class="promo-badge">ECONOMIZE 10%</div>
-                    <a href="/loja" class="btn btn-light promo-btn">Aproveitar oferta <i class="fas fa-arrow-right ms-2"></i></a>
+                    <a href="loja" class="btn btn-light promo-btn">Aproveitar oferta <i class="fas fa-arrow-right ms-2"></i></a>
                 </div>
                 <div class="col-lg-5 text-end d-none d-lg-block">
                     <img src="https://dabisa.com.br/wp-content/uploads/2024/06/Bolo-de-Pote-Dois-amores-doces-bolos-sobremesas-dabisasabores-vilamatilde-vilacarrao-analiafranco-tatuape-zonalestebolo-zonalestedoces-1.jpeg" alt="Combo Degustação" class="img-fluid promo-image">
@@ -250,7 +250,7 @@
                             
                             <!-- CTA Melhorado -->
                             <div class="product-action">
-                                <a href="/loja" class="btn btn-primary shop-button"><i class="fas fa-shopping-bag me-2"></i>Comprar</a>
+                                <a href="loja" class="btn btn-primary shop-button"><i class="fas fa-shopping-bag me-2"></i>Comprar</a>
                                 <button class="btn-wishlist" data-bs-toggle="tooltip" title="Adicionar aos favoritos">
                                     <i class="far fa-heart"></i>
                                 </button>
@@ -391,7 +391,7 @@
         <div class="container text-center">
             <h2 class="mb-4">Pronto para experimentar?</h2>
             <p class="lead mb-4">Peça agora e receba em casa esse prazer incomparável!</p>
-            <a href="/loja" class="btn btn-lg btn-primary px-5 py-3 shop-button">
+            <a href="loja" class="btn btn-lg btn-primary px-5 py-3 shop-button">
                 <i class="fas fa-shopping-bag me-2"></i> Fazer Pedido
             </a>
             <p class="mt-3 text-muted">
