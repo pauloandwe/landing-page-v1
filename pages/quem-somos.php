@@ -3,7 +3,6 @@
         <div class="container">
             <h1 class="display-4 fw-bold">Quem Somos</h1>
             <p class="lead">Conheça a história da Doces Cacau, uma paixão por chocolate transformada em arte</p>
-            <!-- Badge de prova social -->
             <div class="hero-badge mt-3">
                 <span class="badge rounded-pill bg-light text-dark shadow-sm px-4 py-2">
                     <i class="fas fa-award me-1" style="color: var(--secondary-color);"></i>
@@ -23,7 +22,6 @@
         </div>
     </section>
 
-    <!-- Seção de história melhorada com storytelling e imagens-->
     <section class="about-section py-5">
         <div class="container">
             <div class="row">
@@ -68,7 +66,6 @@
         </div>
     </section>
 
-    <!-- Seção de números e estatísticas para credibilidade -->
     <section class="stats-section py-5" style="background-color: var(--light-color);">
         <div class="container">
             <div class="row justify-content-center">
@@ -106,7 +103,6 @@
         </div>
     </section>
 
-    <!-- Seção de nosso processo/diferencial -->
     <section class="process-section py-5 bg-white">
         <div class="container">
             <h2 class="section-title">Nosso Processo Artesanal</h2>
@@ -138,7 +134,6 @@
         </div>
     </section>
 
-    <!-- Seção de valores aprimorada com design mais atraente -->
     <section class="values-section py-5" style="background-color: var(--light-color);">
         <div class="container">
             <h2 class="section-title">Nossos Valores</h2>
@@ -185,7 +180,6 @@
         </div>
     </section>
 
-    <!-- Seção de prova social com depoimentos -->
     <section class="testimonials-about-section py-5 bg-white">
         <div class="container">
             <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
@@ -267,31 +261,12 @@
         </div>
     </section>
 
-    <!-- Equipe melhorada com estilo mais profissional -->
     <section class="team-section py-5" style="background-color: var(--light-color);">
         <div class="container">
             <h2 class="section-title">Conheça Nossa Equipe</h2>
             <p class="text-center mb-5">As mãos e mentes talentosas por trás de cada delícia</p>
 
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="team-card">
-                        <div class="team-img-container">
-                            <img src="img/geo.jpg" alt="Maria Silva" class="team-img">
-                        </div>
-                        <div class="team-content">
-                            <h4 class="team-name">Maria Silva</h4>
-                            <p class="team-role">Fundadora & Chef Chocolatier</p>
-                            <p class="team-bio">Com formação em gastronomia e especialização em chocolates finos na Bélgica, Maria traz sua expertise e paixão para cada receita criada na Doces Cacau.</p>
-                            <div class="team-social">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="row box-center">
                 <div class="col-md-4 mb-4">
                     <div class="team-card">
                         <div class="team-img-container">
@@ -310,28 +285,10 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 mb-4">
-                    <div class="team-card">
-                        <div class="team-img-container">
-                            <img src="img/geo.jpg" alt="Ana Oliveira" class="team-img">
-                        </div>
-                        <div class="team-content">
-                            <h4 class="team-name">Ana Oliveira</h4>
-                            <p class="team-role">Chef Confeiteira</p>
-                            <p class="team-bio">Especialista em confeitaria artística, Ana é a mente criativa por trás dos nossos bolos de pote e decorações especiais para eventos e datas comemorativas.</p>
-                            <div class="team-social">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção "Na Mídia" para autoridade -->
     <section class="media-section py-5 bg-white">
         <div class="container">
             <h2 class="section-title">Doces Cacau na Mídia</h2>
@@ -372,7 +329,6 @@
         </div>
     </section>
 
-    <!-- CTA final para encerrar a página -->
     <section class="about-cta-section py-5" style="background-color: var(--primary-color);">
         <div class="container text-center">
             <h2 class="text-white mb-4">Venha Fazer Parte da Nossa História</h2>
@@ -386,7 +342,6 @@
 </div>
 
 <style>
-    /* Estilos específicos para a página Quem Somos melhorada */
     .divider {
         height: 3px;
         width: 80px;
@@ -401,7 +356,6 @@
         font-weight: 500;
     }
 
-    /* Estilos para a seção de história */
     .about-image-wrapper {
         position: relative;
         height: 450px;
@@ -489,7 +443,6 @@
         font-family: 'Playfair Display', serif;
     }
 
-    /* Estatísticas */
     .stats-container {
         background-color: white;
         padding: 40px;
@@ -567,9 +520,8 @@
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Modificação do process-card para usar flexbox */
     .process-card {
-      background-color: white;
+        background-color: white;
         border-radius: 15px;
         padding: 30px;
         height: 100%;
@@ -606,8 +558,7 @@
         margin-top: auto;
     }
 
-  
-    /* Valores melhorados */
+
     .value-card {
         background-color: white;
         border-radius: 15px;
@@ -668,7 +619,6 @@
         margin-top: 10px;
     }
 
-    /* Depoimentos */
     .testimonial-about-card {
         background-color: white;
         border-radius: 15px;
@@ -747,7 +697,6 @@
         margin-bottom: 0;
     }
 
-    /* Equipe melhorada */
     .team-card {
         background-color: white;
         border-radius: 15px;
@@ -830,7 +779,6 @@
         transform: translateY(-5px);
     }
 
-    /* Na Mídia */
     .media-badge {
         background-color: white;
         border-radius: 10px;
@@ -871,7 +819,6 @@
         font-size: 0.8rem;
     }
 
-    /* CTA final */
     .about-cta-section {
         position: relative;
         overflow: hidden;
@@ -898,12 +845,16 @@
         z-index: 1;
     }
 
-
     .process-section {
         margin-top: 40px;
     }
 
-    /* Responsividade */
+    .box-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     @media (max-width: 991px) {
         .about-image-wrapper {
             height: 400px;

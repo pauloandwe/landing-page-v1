@@ -51,7 +51,6 @@ require_once 'products.php';
 
     <main id="page-content">
         <?php
-        // Carregar a página solicitada
         $page_file = "pages/{$page}.php";
         if (file_exists($page_file)) {
             include $page_file;
@@ -63,7 +62,6 @@ require_once 'products.php';
         ?>
     </main>
 
-    <!-- Modal para produtos -->
     <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">

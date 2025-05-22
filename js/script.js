@@ -45,7 +45,6 @@ $(document).ready(function() {
   setTimeout(animateInfoSection, 150);
   window.addEventListener('scroll', animateInfoSection, {passive: true});
   
-  // Inicializar o modal de produtos
   initProductModal();
 });
 
@@ -65,7 +64,6 @@ setTimeout(function() {
   removePreloader();
 }, 2000);
 
-// Testimonials
 const testimonials = [
   {
       id: 1,
@@ -216,7 +214,6 @@ function animateInfoSection() {
   }
 }
 
-// Produto modal e carrinho
 let cart = [];
 let total = 0;
 let productModal;
@@ -384,7 +381,6 @@ function updateOrderSummary() {
 }
 
 function setupBuyButtons() {
-  // Atualizar para trabalhar com links reais em vez de data-page
   document.querySelectorAll('.shop-button').forEach(button => {
       button.addEventListener('click', function(e) {
           e.preventDefault();
@@ -426,7 +422,6 @@ function setupBuyButtons() {
       });
   });
 
-  // "Ver Todos" botão
   const btnVerTodos = document.querySelector('.btn-ver-todos');
   if (btnVerTodos) {
       btnVerTodos.addEventListener('click', function(e) {
@@ -437,7 +432,6 @@ function setupBuyButtons() {
       });
   }
 
-  // "Explorar Sabores" botão na home
   const exploreBtn = document.querySelector('.hero-section-first .btn-primary');
   if (exploreBtn) {
       exploreBtn.addEventListener('click', function(e) {
@@ -448,7 +442,7 @@ function setupBuyButtons() {
       });
   }
 
-  // Brownie items na galeria
+
   document.querySelectorAll('.brownie-item').forEach(item => {
       item.addEventListener('click', function(e) {
           const title = this.querySelector('h4').textContent;

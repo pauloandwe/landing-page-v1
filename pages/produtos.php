@@ -4,7 +4,6 @@
             <h1 class="display-4 fw-bold">BROWNIES IRRESISTÍVEIS</h1>
             <p class="lead">Descubra os sabores que fazem nossos clientes voltarem sempre</p>
 
-            <!-- Adicionado: Badge de prova social -->
             <div class="hero-badge">
                 <span class="badge rounded-pill bg-light text-dark shadow-sm px-4 py-2 mb-4">
                     <i class="fas fa-star me-1" style="color: #FFD700;"></i>
@@ -21,7 +20,6 @@
         </div>
     </section>
 
-    <!-- NOVO: Barra de filtros e categorias -->
     <section class="py-3 bg-white border-bottom category-filter-section">
         <div class="container">
             <div class="row align-items-center">
@@ -34,7 +32,6 @@
                     </ul>
                 </div>
                 <div class="col-lg-6 text-end mt-3 mt-lg-0">
-                    <!-- Adicionado: Banner de desconto -->
                     <span class="special-offer rounded-pill">
                         <i class="fas fa-tags me-1"></i>
                         Use o cupom <strong>BROWNIE10</strong> e ganhe 10% OFF
@@ -44,7 +41,6 @@
         </div>
     </section>
 
-    <!-- DESTAQUE: Brownie em evidência com fotos de alta qualidade -->
     <section class="py-5 bg-white spotlight-section">
         <div class="container">
             <div class="spotlight-product">
@@ -97,7 +93,6 @@
         </div>
     </section>
 
-    <!-- Brownies Especiais (mantendo a estrutura original mas melhorando) -->
     <section class="py-5 bg-white products-grid-section">
         <div class="container">
             <div class="section-header">
@@ -107,18 +102,15 @@
 
             <div class="row">
                 <?php
-                // Exibe os primeiros 3 produtos
                 foreach (array_slice($products, 0, 3) as $product) {
                 ?>
                     <div class="col-md-4 mb-4">
                         <div class="product-card product-card-enhanced">
-                            <!-- Badge de produto popular -->
                             <?php if ($product['id'] == 2): ?>
                                 <div class="product-badge">MAIS VENDIDO</div>
                             <?php endif; ?>
 
                             <div class="product-image" style="background-image: url('<?= $product['image']; ?>');">
-                                <!-- Overlay com efeito hover -->
                                 <div class="product-quick-actions">
                                     <button class="btn-quick-view" data-product-id="<?= $product['id']; ?>">
                                         <i class="fas fa-eye"></i>
@@ -138,7 +130,6 @@
                                     <i class="fas fa-star"></i>
                                 </div>
                                 <h4 class="product-title"><?= $product['name']; ?></h4>
-                                <!-- Descrição sensorial melhorada -->
                                 <p class="product-description">
                                     <?= $product['description']; ?>
                                     <?php if ($product['id'] == 1): ?>
@@ -146,17 +137,14 @@
                                     <?php endif; ?>
                                 </p>
 
-                                <!-- Preço com aparência melhorada -->
                                 <div class="product-price-box">
                                     <p class="product-price">R$ <?= number_format($product['price'], 2, ',', '.'); ?></p>
 
-                                    <!-- Exibir parcela para produtos acima de R$15 -->
                                     <?php if ($product['price'] > 15): ?>
                                         <span class="product-installment">ou 2x de R$ <?= number_format($product['price'] / 2, 2, ',', '.'); ?></span>
                                     <?php endif; ?>
                                 </div>
 
-                                <!-- CTA Melhorado -->
                                 <div class="product-action">
                                     <a href="loja" class="btn btn-primary shop-button"><i class="fas fa-shopping-bag me-2"></i>Comprar</a>
                                     <button class="btn-wishlist" data-bs-toggle="tooltip" title="Adicionar aos favoritos">
@@ -171,15 +159,22 @@
         </div>
     </section>
 
-    <!-- NOVO: Banner promocional entre seções -->
     <section class="promo-banner">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
                     <h3 class="promo-title">EXPERIMENTE NOSSO COMBO DEGUSTAÇÃO</h3>
                     <p class="promo-description">6 mini brownies com diferentes sabores para você conhecer toda nossa linha!</p>
+                    <div class="combo-details mb-3">
+                        <p class="mb-1"><i class="fas fa-check-circle me-2"></i> Tradicional, Nutella, Maracujá, Doce de Leite, Nozes e Morango</p>
+                        <p class="mb-1"><i class="fas fa-check-circle me-2"></i> Embalagem especial para presente</p>
+                        <p class="mb-1"><i class="fas fa-check-circle me-2"></i> <span class="price-highlight">De <strike>R$ 59,90</strike> por apenas <strong>R$ 45,90</strong></span></p>
+                    </div>
                     <div class="promo-badge">ECONOMIZE 10%</div>
-                    <a href="loja" class="btn btn-light promo-btn">Aproveitar oferta <i class="fas fa-arrow-right ms-2"></i></a>
+                    <a href="produtos" class="cta-button mx-2 mt-2">
+                        <span>Aproveitar oferta</span>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
                 </div>
                 <div class="col-lg-5 text-end d-none d-lg-block">
                     <img src="https://dabisa.com.br/wp-content/uploads/2024/06/Bolo-de-Pote-Dois-amores-doces-bolos-sobremesas-dabisasabores-vilamatilde-vilacarrao-analiafranco-tatuape-zonalestebolo-zonalestedoces-1.jpeg" alt="Combo Degustação" class="img-fluid promo-image">
@@ -188,7 +183,6 @@
         </div>
     </section>
 
-    <!-- Outros Produtos (mantendo a estrutura original mas melhorando) -->
     <section class="py-5" style="background-color: var(--light-color);">
         <div class="container">
             <div class="section-header">
@@ -198,18 +192,15 @@
 
             <div class="row">
                 <?php
-                // Exibe o restante dos produtos
                 foreach (array_slice($products, 3) as $product) {
                 ?>
                     <div class="col-md-4 mb-4">
                         <div class="product-card product-card-enhanced">
-                            <!-- Badge de lançamento para o último produto -->
                             <?php if ($product['id'] == 6): ?>
                                 <div class="product-badge product-badge-new">LANÇAMENTO</div>
                             <?php endif; ?>
 
                             <div class="product-image" style="background-image: url('<?= $product['image']; ?>');">
-                                <!-- Overlay com efeito hover -->
                                 <div class="product-quick-actions">
                                     <button class="btn-quick-view" data-product-id="<?= $product['id']; ?>">
                                         <i class="fas fa-eye"></i>
@@ -230,7 +221,6 @@
                                 </div>
                                 <h4 class="product-title"><?= $product['name']; ?></h4>
 
-                                <!-- Descrição sensorial melhorada -->
                                 <p class="product-description">
                                     <?= $product['description']; ?>
                                     <?php if ($product['id'] == 6): ?>
@@ -238,17 +228,14 @@
                                     <?php endif; ?>
                                 </p>
 
-                                <!-- Preço com aparência melhorada -->
                                 <div class="product-price-box">
                                     <p class="product-price">R$ <?= number_format($product['price'], 2, ',', '.'); ?></p>
 
-                                    <!-- Exibir parcela para produtos acima de R$15 -->
                                     <?php if ($product['price'] > 15): ?>
                                         <span class="product-installment">ou 3x de R$ <?= number_format($product['price'] / 3, 2, ',', '.'); ?> sem juros</span>
                                     <?php endif; ?>
                                 </div>
 
-                                <!-- CTA Melhorado -->
                                 <div class="product-action">
                                     <a href="loja" class="btn btn-primary shop-button"><i class="fas fa-shopping-bag me-2"></i>Comprar</a>
                                     <button class="btn-wishlist" data-bs-toggle="tooltip" title="Adicionar aos favoritos">
@@ -263,7 +250,6 @@
         </div>
     </section>
 
-    <!-- NOVO: Seção de depoimentos para prova social -->
     <section class="py-5 bg-white testimonial-product-section">
         <div class="container">
             <h2 class="section-title">O que nossos clientes dizem</h2>
@@ -386,12 +372,10 @@
         </div>
     </section>
 
-    <!-- NOVO: Seção CTA final -->
     <section class="py-5 bg-white final-cta-section">
         <div class="container text-center">
             <h2 class="mb-4">Pronto para experimentar?</h2>
             <p class="lead mb-4">Peça agora e receba em casa esse prazer incomparável!</p>
-            <!-- Removida a classe shop-button e adicionada outra classe para estilização semelhante -->
             <a href="loja" class="btn btn-lg btn-primary px-5 py-3 cta-shop-link">
                 <i class="fas fa-shopping-bag me-2"></i> Fazer Pedido
             </a>
@@ -401,7 +385,6 @@
         </div>
     </section>
 
-    <!-- Modal de visualização rápida -->
     <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -446,7 +429,6 @@
 </div>
 
 <style>
-    /* Estilos adicionais para a página melhorada de produtos */
     .hero-badge {
         margin-top: 1.5rem;
     }
@@ -489,7 +471,6 @@
         display: inline-block;
     }
 
-    /* Spotlight section */
     .spotlight-product {
         background-color: #fff;
         border-radius: 16px;
@@ -637,7 +618,6 @@
         margin-right: 0.5rem;
     }
 
-    /* Product Cards Enhanced */
     .product-card-enhanced {
         background-color: white;
         border-radius: 16px;
@@ -796,7 +776,6 @@
         transform: scale(1.2);
     }
 
-    /* Promo Banner Section */
     .promo-banner {
         background-color: var(--primary-color);
         color: white;
@@ -863,7 +842,6 @@
         z-index: 1;
     }
 
-    /* Testimonial Product Section */
     .testimonial-product-card {
         background-color: white;
         padding: 25px;
@@ -909,7 +887,6 @@
         margin-bottom: 0;
     }
 
-    /* Accordion FAQ Section */
     .accordion-item {
         border: none;
         margin-bottom: 15px;
@@ -943,15 +920,11 @@
         color: #555;
     }
 
-    /* Final CTA Section */
     .final-cta-section {
         background-color: #fff;
         position: relative;
     }
 
-   
-
-    /* Responsive tweaks */
     @media (max-width: 767px) {
         .spotlight-title {
             font-size: 1.8rem;
@@ -976,7 +949,6 @@
         }
     }
 
-    /* Quick View Modal Styling */
     #quickViewModal .modal-content {
         border-radius: 15px;
         overflow: hidden;
@@ -1049,13 +1021,11 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Inicialização de tooltips
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl)
         });
 
-        // Modal de Visualização Rápida
         const quickViewModal = new bootstrap.Modal(document.getElementById('quickViewModal'));
         const quickViewBtns = document.querySelectorAll('.btn-quick-view');
 
@@ -1076,7 +1046,6 @@
             });
         });
 
-        // Controles de quantidade no quickview
         document.getElementById('quickview-increase').addEventListener('click', function() {
             const input = document.getElementById('quickview-quantity');
             let value = parseInt(input.value);
@@ -1089,7 +1058,6 @@
             if (value > 1) input.value = value - 1;
         });
 
-        // Adicionar ao carrinho a partir do quickview
         document.getElementById('quickview-add-to-cart').addEventListener('click', function() {
             const title = document.getElementById('quickview-title').textContent;
             const product = products.find(p => p.name === title);
@@ -1112,10 +1080,8 @@
                         }
                     });
 
-                    // Fecha o quick view
                     quickViewModal.hide();
 
-                    // Abre o modal de produtos
                     setTimeout(() => {
                         if (typeof productModal !== 'undefined') {
                             updateOrderSummary();
@@ -1126,20 +1092,15 @@
             }
         });
 
-        // Filtros de categorias
         const filterPills = document.querySelectorAll('.filter-pill-btn');
         filterPills.forEach(pill => {
             pill.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector('.filter-pills li.active').classList.remove('active');
                 this.parentElement.classList.add('active');
-
-                // Aqui poderia ter a lógica de filtro dos produtos
-                // Por exemplo, filtrar por categoria
             });
         });
 
-        // Adicionar ao carrinho diretamente dos cards
         const addToCartBtns = document.querySelectorAll('.btn-add-cart');
         addToCartBtns.forEach(btn => {
             btn.addEventListener('click', function(e) {

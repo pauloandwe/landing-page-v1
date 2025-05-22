@@ -1,5 +1,4 @@
 <div id="home">
-    <!-- Hero Section -->
     <section class="hero-section-first">
         <div class="container hero-container">
             <div class="hero-content">
@@ -26,7 +25,6 @@
             </div>
 
             <div class="gallery" id="gallery">
-                <!-- Imagens de brownie animadas -->
             </div>
         </div>
 
@@ -37,7 +35,6 @@
         </div>
     </section>
 
-    <!-- Seção de Manifesto -->
     <section class="brand-story py-5 bg-white">
         <div class="container">
             <div class="row justify-content-center">
@@ -55,7 +52,6 @@
         </div>
     </section>
 
-    <!-- Seção de Brownies em Destaque -->
     <section class="brownie-showcase py-5">
         <div class="container">
             <h2 class="section-title">Descubra Nossas Delícias</h2>
@@ -99,7 +95,6 @@
         </div>
     </section>
 
-    <!-- Banner Promocional -->
     <section class="promo-banner">
         <div class="container">
             <div class="row">
@@ -112,241 +107,234 @@
                         <p class="mb-1"><i class="fas fa-check-circle me-2"></i> <span class="price-highlight">De <strike>R$ 59,90</strike> por apenas <strong>R$ 45,90</strong></span></p>
                     </div>
                     <div class="promo-badge">ECONOMIZE 10%</div>
-                        <a href="produtos" class="cta-button mx-2 mt-2">
-                            <span>Aproveitar oferta</span>
-                            <i class="fas fa-long-arrow-alt-right"></i>
-                        </a>
-            </div>
-            <div class="col-lg-5 text-end d-none d-lg-block">
-                <img src="https://dabisa.com.br/wp-content/uploads/2024/06/Bolo-de-Pote-Dois-amores-doces-bolos-sobremesas-dabisasabores-vilamatilde-vilacarrao-analiafranco-tatuape-zonalestebolo-zonalestedoces-1.jpeg" alt="Combo Degustação" class="img-fluid promo-image">
+                    <a href="produtos" class="cta-button mx-2 mt-2">
+                        <span>Aproveitar oferta</span>
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                </div>
+                <div class="col-lg-5 text-end d-none d-lg-block">
+                    <img src="https://dabisa.com.br/wp-content/uploads/2024/06/Bolo-de-Pote-Dois-amores-doces-bolos-sobremesas-dabisasabores-vilamatilde-vilacarrao-analiafranco-tatuape-zonalestebolo-zonalestedoces-1.jpeg" alt="Combo Degustação" class="img-fluid promo-image">
+                </div>
             </div>
         </div>
-</div>
-</section>
+    </section>
 
-<!-- Categorias Especiais -->
-<section class="categories-section py-5 bg-white">
-    <div class="container">
-        <h2 class="section-title">Para Cada Momento Especial</h2>
-        <p class="text-center mb-5">Nossos brownies são perfeitos para qualquer ocasião, de presentes a eventos corporativos</p>
+    <section class="categories-section py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title">Para Cada Momento Especial</h2>
+            <p class="text-center mb-5">Nossos brownies são perfeitos para qualquer ocasião, de presentes a eventos corporativos</p>
 
-        <div class="row categories-grid">
-            <div class="col-md-4 mb-4">
-                <div class="category-card">
-                    <div class="category-icon">
+            <div class="row categories-grid">
+                <div class="col-md-4 mb-4">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h4>Presentes</h4>
+                        <p>Surpreenda alguém especial com nossas caixas de brownies decoradas para qualquer ocasião.</p>
+                        <div class="category-examples">
+                            <span>Aniversários</span>
+                            <span>Dia dos Namorados</span>
+                            <span>Agradecimentos</span>
+                        </div>
+                        <a href="produtos" class="category-link">Ver opções <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <h4>Festas e Eventos</h4>
+                        <p>Encomendas personalizadas com sua marca e em grandes quantidades para eventos inesquecíveis.</p>
+                        <div class="category-examples">
+                            <span>Casamentos</span>
+                            <span>Formaturas</span>
+                            <span>Aniversários</span>
+                        </div>
+                        <a href="produtos" class="category-link">Ver opções <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h4>Corporativo</h4>
+                        <p>Brownies personalizados com a logo da sua empresa, perfeitos como brindes e presentes.</p>
+                        <div class="category-examples">
+                            <span>Brindes</span>
+                            <span>Reuniões</span>
+                            <span>Coffee breaks</span>
+                        </div>
+                        <a href="produtos" class="category-link">Ver opções <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-highlight-section">
+        <div class="wave-divider-top wave-white">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="info-cards-container">
+                <div class="info-card" data-delay="0">
+                    <div class="info-card-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Ingredientes Premium</h3>
+                    <p>Chocolate belga 70% cacau e ingredientes frescos selecionados para um sabor incomparável.</p>
+                </div>
+
+                <div class="info-card" data-delay="200">
+                    <div class="info-card-icon">
+                        <i class="fas fa-mortar-pestle"></i>
+                    </div>
+                    <h3>Receita Artesanal</h3>
+                    <p>Cada brownie é produzido à mão em pequenos lotes, garantindo o controle de qualidade perfeito.</p>
+                </div>
+
+                <div class="info-card" data-delay="400">
+                    <div class="info-card-icon">
                         <i class="fas fa-gift"></i>
                     </div>
-                    <h4>Presentes</h4>
-                    <p>Surpreenda alguém especial com nossas caixas de brownies decoradas para qualquer ocasião.</p>
-                    <div class="category-examples">
-                        <span>Aniversários</span>
-                        <span>Dia dos Namorados</span>
-                        <span>Agradecimentos</span>
-                    </div>
-                    <a href="produtos" class="category-link">Ver opções <i class="fas fa-arrow-right"></i></a>
+                    <h3>Ocasiões Especiais</h3>
+                    <p>Oferecemos kits personalizados para festas, eventos corporativos e momentos únicos.</p>
                 </div>
             </div>
 
-            <div class="col-md-4 mb-4">
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-birthday-cake"></i>
-                    </div>
-                    <h4>Festas e Eventos</h4>
-                    <p>Encomendas personalizadas com sua marca e em grandes quantidades para eventos inesquecíveis.</p>
-                    <div class="category-examples">
-                        <span>Casamentos</span>
-                        <span>Formaturas</span>
-                        <span>Aniversários</span>
-                    </div>
-                    <a href="produtos" class="category-link">Ver opções <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h4>Corporativo</h4>
-                    <p>Brownies personalizados com a logo da sua empresa, perfeitos como brindes e presentes.</p>
-                    <div class="category-examples">
-                        <span>Brindes</span>
-                        <span>Reuniões</span>
-                        <span>Coffee breaks</span>
-                    </div>
-                    <a href="produtos" class="category-link">Ver opções <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Seção de Diferenciais -->
-<section class="info-highlight-section">
-    <div class="wave-divider-top wave-white">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-        </svg>
-    </div>
-
-    <div class="container">
-        <div class="info-cards-container">
-            <div class="info-card" data-delay="0">
-                <div class="info-card-icon">
-                    <i class="fas fa-medal"></i>
-                </div>
-                <h3>Ingredientes Premium</h3>
-                <p>Chocolate belga 70% cacau e ingredientes frescos selecionados para um sabor incomparável.</p>
-            </div>
-
-            <div class="info-card" data-delay="200">
-                <div class="info-card-icon">
-                    <i class="fas fa-mortar-pestle"></i>
-                </div>
-                <h3>Receita Artesanal</h3>
-                <p>Cada brownie é produzido à mão em pequenos lotes, garantindo o controle de qualidade perfeito.</p>
-            </div>
-
-            <div class="info-card" data-delay="400">
-                <div class="info-card-icon">
-                    <i class="fas fa-gift"></i>
-                </div>
-                <h3>Ocasiões Especiais</h3>
-                <p>Oferecemos kits personalizados para festas, eventos corporativos e momentos únicos.</p>
+            <div class="cta-container">
+                <a href="produtos" class="cta-button">
+                    <span>Descubra Nossos Sabores</span>
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </a>
             </div>
         </div>
 
-        <div class="cta-container">
-            <a href="produtos" class="cta-button">
-                <span>Descubra Nossos Sabores</span>
-                <i class="fas fa-long-arrow-alt-right"></i>
+        <div class="wave-divider wave-white">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="additional-info-section">
+        <div class="container pb-5">
+            <h2 class="section-title">Descubra Nossa Qualidade</h2>
+
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="img-container position-relative">
+                        <img src="img/brownie-artesanal.png" alt="Processo artesanal" class="img-fluid rounded-3 shadow-lg">
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="additional-content">
+                        <h3 class="mb-4" style="color: var(--primary-color); font-family: 'Playfair Display', serif; font-weight: 700;">
+                            Nosso Compromisso com a Excelência</h3>
+
+                        <div class="mb-4">
+                            <div class="d-flex mb-3">
+                                <div class="feature-icon-sm me-3" style="color: var(--secondary-color); font-size: 1.5rem;">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h5 style="color: var(--primary-color);">Ingredientes Selecionados</h5>
+                                    <p>Utilizamos apenas chocolates premium e ingredientes frescos e naturais em nossas receitas, sem conservantes ou aditivos.</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex mb-3">
+                                <div class="feature-icon-sm me-3" style="color: var(--secondary-color); font-size: 1.5rem;">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h5 style="color: var(--primary-color);">Produção Artesanal</h5>
+                                    <p>Cada brownie é feito à mão com carinho e atenção aos detalhes para garantir uma textura macia por dentro e crocante por fora.</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="feature-icon-sm me-3" style="color: var(--secondary-color); font-size: 1.5rem;">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h5 style="color: var(--primary-color);">Experiência Única</h5>
+                                    <p>Oferecemos não apenas um doce, mas uma experiência completa que transforma momentos comuns em memórias especiais para compartilhar com quem você ama.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-5">
+                            <a href="quem-somos" class="btn-ver-todos">Saiba Mais Sobre Nós</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wave-divider wave-light">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="py-5" style="background-color: var(--light-color);">
+        <div class="container">
+            <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <div class="review-summary mb-4">
+                        <div class="stars-average">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="review-count">4.9 de 5 estrelas com base em <strong>156 avaliações</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-slider-container">
+                <div id="testimonial-track" class="testimonial-track">
+                </div>
+            </div>
+
+            <div class="row corporate-clients mt-5">
+                <div class="col-12 text-center mb-3">
+                    <h5 class="text-muted">Empresas que confiam em nossos brownies:</h5>
+                </div>
+                <div class="col-12">
+                    <div class="client-logos">
+                        <img src="/api/placeholder/100/50" alt="Cliente Corporativo 1" class="client-logo">
+                        <img src="/api/placeholder/100/50" alt="Cliente Corporativo 2" class="client-logo">
+                        <img src="/api/placeholder/100/50" alt="Cliente Corporativo 3" class="client-logo">
+                        <img src="/api/placeholder/100/50" alt="Cliente Corporativo 4" class="client-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="whatsapp-cta py-5 bg-white">
+        <div class="container text-center">
+            <h3 class="mb-3">Tem alguma dúvida? Fale conosco!</h3>
+            <p class="mb-4">Entre em contato pelo WhatsApp para encomendas personalizadas, dúvidas ou sugestões.</p>
+            <a href="https://wa.me/5511999988888?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20fazer%20uma%20encomenda.%20Voc%C3%AAs%20poderiam%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-success btn-lg whatsapp-btn">
+                <i class="fab fa-whatsapp me-2"></i> Conversar pelo WhatsApp
             </a>
         </div>
-    </div>
-
-    <div class="wave-divider wave-white">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-        </svg>
-    </div>
-</section>
-
-<!-- Seção de Qualidade -->
-<section class="additional-info-section">
-    <div class="container pb-5">
-        <h2 class="section-title">Descubra Nossa Qualidade</h2>
-
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <div class="img-container position-relative">
-                    <img src="img/brownie-artesanal.png" alt="Processo artesanal" class="img-fluid rounded-3 shadow-lg">
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="additional-content">
-                    <h3 class="mb-4" style="color: var(--primary-color); font-family: 'Playfair Display', serif; font-weight: 700;">
-                        Nosso Compromisso com a Excelência</h3>
-
-                    <div class="mb-4">
-                        <div class="d-flex mb-3">
-                            <div class="feature-icon-sm me-3" style="color: var(--secondary-color); font-size: 1.5rem;">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div>
-                                <h5 style="color: var(--primary-color);">Ingredientes Selecionados</h5>
-                                <p>Utilizamos apenas chocolates premium e ingredientes frescos e naturais em nossas receitas, sem conservantes ou aditivos.</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex mb-3">
-                            <div class="feature-icon-sm me-3" style="color: var(--secondary-color); font-size: 1.5rem;">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div>
-                                <h5 style="color: var(--primary-color);">Produção Artesanal</h5>
-                                <p>Cada brownie é feito à mão com carinho e atenção aos detalhes para garantir uma textura macia por dentro e crocante por fora.</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex">
-                            <div class="feature-icon-sm me-3" style="color: var(--secondary-color); font-size: 1.5rem;">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div>
-                                <h5 style="color: var(--primary-color);">Experiência Única</h5>
-                                <p>Oferecemos não apenas um doce, mas uma experiência completa que transforma momentos comuns em memórias especiais para compartilhar com quem você ama.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="text-center mt-5">
-                        <a href="quem-somos" class="btn-ver-todos">Saiba Mais Sobre Nós</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="wave-divider wave-light">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-        </svg>
-    </div>
-</section>
-
-<!-- Seção de Depoimentos -->
-<section class="py-5" style="background-color: var(--light-color);">
-    <div class="container">
-        <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
-        <div class="row mb-4">
-            <div class="col-12 text-center">
-                <div class="review-summary mb-4">
-                    <div class="stars-average">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <div class="review-count">4.9 de 5 estrelas com base em <strong>156 avaliações</strong></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="testimonial-slider-container">
-            <div id="testimonial-track" class="testimonial-track">
-                <!-- Depoimentos serão carregados via JavaScript -->
-            </div>
-        </div>
-
-        <div class="row corporate-clients mt-5">
-            <div class="col-12 text-center mb-3">
-                <h5 class="text-muted">Empresas que confiam em nossos brownies:</h5>
-            </div>
-            <div class="col-12">
-                <div class="client-logos">
-                    <img src="/api/placeholder/100/50" alt="Cliente Corporativo 1" class="client-logo">
-                    <img src="/api/placeholder/100/50" alt="Cliente Corporativo 2" class="client-logo">
-                    <img src="/api/placeholder/100/50" alt="Cliente Corporativo 3" class="client-logo">
-                    <img src="/api/placeholder/100/50" alt="Cliente Corporativo 4" class="client-logo">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Seção CTA WhatsApp -->
-<section class="whatsapp-cta py-5 bg-white">
-    <div class="container text-center">
-        <h3 class="mb-3">Tem alguma dúvida? Fale conosco!</h3>
-        <p class="mb-4">Entre em contato pelo WhatsApp para encomendas personalizadas, dúvidas ou sugestões.</p>
-        <a href="https://wa.me/5511999988888?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20fazer%20uma%20encomenda.%20Voc%C3%AAs%20poderiam%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-success btn-lg whatsapp-btn">
-            <i class="fab fa-whatsapp me-2"></i> Conversar pelo WhatsApp
-        </a>
-    </div>
-</section>
+    </section>
 </div>
 
 <style>
-
     .delivery-info {
         color: rgba(255, 255, 255, 0.9);
         font-size: 0.95rem;
@@ -405,7 +393,6 @@
         border-radius: 3px;
     }
 
-    /* Badges de produtos */
     .product-badge {
         position: absolute;
         top: 15px;
@@ -437,7 +424,6 @@
         margin-top: 5px;
     }
 
-    /* Banner promocional */
     .promo-banner {
         background-color: var(--primary-color);
         color: white;
@@ -506,7 +492,7 @@
 
     .promo-badge {
         display: inline-block;
-        background-color:rgb(208, 255, 40);
+        background-color: rgb(208, 255, 40);
         color: black;
         padding: 5px 15px;
         border-radius: 50px;
@@ -532,7 +518,6 @@
         z-index: 1;
     }
 
-    /* Categorias */
     .categories-grid {
         margin-top: 30px;
     }
@@ -635,7 +620,6 @@
         transform: translateX(5px);
     }
 
-    /* Depoimentos */
     .review-summary {
         display: inline-block;
         background-color: white;
@@ -677,7 +661,6 @@
         opacity: 1;
     }
 
-    /* CTA WhatsApp */
     .whatsapp-btn {
         padding: 15px 30px;
         border-radius: 50px;
@@ -691,7 +674,6 @@
         box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4);
     }
 
-    /* Media queries responsivas */
     @media (max-width: 991px) {
         .hero-section-first {
             padding-top: 100px;
@@ -752,17 +734,13 @@
 </style>
 
 <script>
-    // Script para animação e funcionalidades da página
     document.addEventListener('DOMContentLoaded', function() {
-        // Adiciona contador regressivo nos itens com estoque limitado
         const stockWarnings = document.querySelectorAll('.stock-warning');
         stockWarnings.forEach(warning => {
-            // Gera um número aleatório entre 3 e 8 para o estoque
             const randomStock = Math.floor(Math.random() * 6) + 3;
             warning.innerHTML = `<i class="fas fa-exclamation-circle"></i> Apenas ${randomStock} unidades em estoque!`;
         });
 
-        // Simula loading de logos de clientes corporativos
         const clientLogos = document.querySelectorAll('.client-logo');
         setTimeout(() => {
             clientLogos.forEach((logo, index) => {
