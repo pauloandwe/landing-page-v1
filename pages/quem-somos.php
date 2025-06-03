@@ -103,38 +103,7 @@
         </div>
     </section>
 
-    <section class="process-section py-5 bg-white">
-        <div class="container">
-            <h2 class="section-title">Nosso Processo Artesanal</h2>
-            <p class="text-center mb-5">Conheça como transformamos os melhores ingredientes em brownies irresistíveis</p>
-
-            <div class="row mt-5">
-                <div class="col-md-4 mb-4">
-                    <div class="process-card">
-                        <h4>Seleção de Ingredientes</h4>
-                        <p>Escolhemos apenas chocolate belga 70% cacau e ingredientes premium, preferencialmente locais e orgânicos. Não utilizamos conservantes ou aditivos químicos.</p>
-                        <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Ingredientes" class="process-image">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="process-card">
-                        <h4>Produção Artesanal</h4>
-                        <p>Cada brownie é feito à mão em pequenos lotes diários, seguindo receitas exclusivas desenvolvidas ao longo de anos. Nosso processo garante aquela textura perfeita: crocante por fora e macia por dentro.</p>
-                        <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Produção" class="process-image">
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="process-card">
-                        <h4>Embalagem com Carinho</h4>
-                        <p>Embalamos cada produto com o mesmo cuidado que teríamos ao preparar um presente para alguém especial. Nossas embalagens são sustentáveis e pensadas para preservar o frescor e o sabor.</p>
-                        <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Embalagem" class="process-image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="values-section py-5" style="background-color: var(--light-color);">
+    <section class="values-section py-5" style="background-color: var(--light-color); margin-top: 60px;">
         <div class="container">
             <h2 class="section-title">Nossos Valores</h2>
             <p class="text-center mb-5">Princípios que guiam cada brownie que produzimos</p>
@@ -557,7 +526,6 @@
         object-fit: cover;
         margin-top: auto;
     }
-
 
     .value-card {
         background-color: white;
