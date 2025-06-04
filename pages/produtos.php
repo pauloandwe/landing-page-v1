@@ -26,9 +26,6 @@
                 <div class="col-lg-6">
                     <ul class="filter-pills d-flex flex-wrap gap-2 mb-0">
                         <li class="active"><a href="#" class="filter-pill-btn">Todos</a></li>
-                        <li><a href="#" class="filter-pill-btn">Brownies Clássicos</a></li>
-                        <li><a href="#" class="filter-pill-btn">Brownies no Pote</a></li>
-                        <li><a href="#" class="filter-pill-btn">Kits & Presentes</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-6 text-end mt-3 mt-lg-0">
