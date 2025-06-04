@@ -95,29 +95,66 @@
         </div>
     </section>
 
-    <section class="promo-banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <h3 class="promo-title">EXPERIMENTE NOSSO COMBO DEGUSTAÇÃO</h3>
-                    <p class="promo-description">6 mini brownies com diferentes sabores para você conhecer toda nossa linha!</p>
-                    <div class="combo-details mb-3">
-                        <p class="mb-1"><i class="fas fa-check-circle me-2"></i> Tradicional, Nutella, Maracujá, Doce de Leite, Nozes e Morango</p>
-                        <p class="mb-1"><i class="fas fa-check-circle me-2"></i> Embalagem especial para presente</p>
-                        <p class="mb-1"><i class="fas fa-check-circle me-2"></i> <span class="price-highlight">De <strike>R$ 59,90</strike> por apenas <strong>R$ 45,90</strong></span></p>
+    <section class="combo-cta-section">
+    <div class="wave-divider-top wave-white">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+            <div class="container">
+                <div class="combo-cta-card">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <div class="combo-content">
+                                <div class="combo-header">
+                                    <span class="combo-badge">Oferta Especial</span>
+                                    <h3 class="combo-title">Combo Degustação</h3>
+                                    <p class="combo-subtitle">6 mini brownies com sabores únicos</p>
+                                </div>
+                                
+                                <div class="combo-flavors">
+                                    <span class="flavor-tag">Tradicional</span>
+                                    <span class="flavor-tag">Nutella</span>
+                                    <span class="flavor-tag">Maracujá</span>
+                                    <span class="flavor-tag">Doce de Leite</span>
+                                    <span class="flavor-tag">Nozes</span>
+                                    <span class="flavor-tag">Morango</span>
+                                </div>
+
+                                <div class="combo-price-section">
+                                    <div class="price-row">
+                                        <span class="old-price">R$ 59,90</span>
+                                        <span class="current-price">R$ 45,90</span>
+                                        <span class="discount-tag">23% OFF</span>
+                                    </div>
+                                    <p class="price-info">Embalagem especial para presente incluída</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 text-center">
+                            <div class="combo-cta-action">
+                                <div class="combo-image-stack">
+                                    <img src="https://dabisa.com.br/wp-content/uploads/2024/06/Bolo-de-Pote-Dois-amores-doces-bolos-sobremesas-dabisasabores-vilamatilde-vilacarrao-analiafranco-tatuape-zonalestebolo-zonalestedoces-1.jpeg" alt="Combo Degustação" class="combo-img">
+                                </div>
+                                <a href="produtos" class="combo-cta-btn">
+                                    <span>Quero Experimentar</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <p class="delivery-note">
+                                    <i class="fas fa-truck"></i> Entrega rápida
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="promo-badge">ECONOMIZE 10%</div>
-                    <a href="produtos" class="cta-button mx-2 mt-2">
-                        <span>Aproveitar oferta</span>
-                        <i class="fas fa-long-arrow-alt-right"></i>
-                    </a>
-                </div>
-                <div class="col-lg-5 text-end d-none d-lg-block">
-                    <img src="https://dabisa.com.br/wp-content/uploads/2024/06/Bolo-de-Pote-Dois-amores-doces-bolos-sobremesas-dabisasabores-vilamatilde-vilacarrao-analiafranco-tatuape-zonalestebolo-zonalestedoces-1.jpeg" alt="Combo Degustação" class="img-fluid promo-image">
                 </div>
             </div>
+            <div class="wave-divider wave-white">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
         </div>
-    </section>
+        </section>
 
     <section class="categories-section py-5 bg-white">
         <div class="container">
@@ -731,6 +768,510 @@
             padding: 100px 0px 60px 0px;
         }
     }
+    .combo-cta-section {
+    padding: 130px 0px;
+    background-color: var(--primary-color);
+        color: white;
+        position: relative;
+        overflow: hidden;
+}
+
+.combo-cta-section:before {
+    content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://imgs.search.brave.com/Y7dHf7-WWAE2ucXulThccb1WuI6IXNlDnqD7-6EEB-o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNDYv/MTEzLzg2My9zbWFs/bC9tZWx0ZWQtY2hv/Y29sYXRlLWJhY2tn/cm91bmQtZnJlZS1w/aG90by5qcGc');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.15;
+        z-index: 0;
+}
+
+
+
+.combo-cta-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(212, 167, 106, 0.2);
+}
+
+.combo-content {
+    padding-right: 20px;
+}
+
+.combo-header {
+    margin-bottom: 25px;
+}
+
+.combo-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--highlight-color), #ff8a8a);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(241, 165, 165, 0.3);
+}
+
+.combo-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.combo-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.combo-flavors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.flavor-tag {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(212, 167, 106, 0.3);
+    transition: all 0.3s ease;
+}
+
+.flavor-tag:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.combo-price-section {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.old-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 1.1rem;
+}
+
+.current-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.discount-tag {
+    background-color: #28a745;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.price-info {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+.price-info:before {
+    content: '✓';
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.combo-cta-action {
+    padding-left: 20px;
+}
+
+.combo-image-stack {
+    position: relative;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+.combo-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.combo-cta-action:hover .combo-img {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.combo-image-stack:before {
+    content: '🔥';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--highlight-color), #ff8a8a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.combo-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 30px rgba(75, 46, 43, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.combo-cta-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.combo-cta-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(75, 46, 43, 0.4);
+    color: white;
+}
+
+.combo-cta-btn:hover:before {
+    left: 100%;
+}
+
+.combo-cta-btn i {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.combo-cta-btn:hover i {
+    transform: translateX(5px);
+}
+
+.delivery-note {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.delivery-note i {
+    color: var(--secondary-color);
+}
+
+.categories-section {
+    padding: 80px 0;
+}
+
+.categories-grid {
+    margin-top: 30px;
+}
+
+.category-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border-bottom: 4px solid var(--secondary-color);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.category-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    z-index: 1;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.category-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 28px;
+    transition: all 0.4s ease;
+}
+
+.category-card:hover .category-icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.category-card h4 {
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.category-card p {
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.category-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.category-examples span {
+    background-color: var(--light-color);
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    border-radius: 50px;
+    color: var(--primary-color);
+}
+
+.category-link {
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.category-link i {
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+.category-link:hover {
+    color: var(--primary-color);
+}
+
+.category-link:hover i {
+    transform: translateX(5px);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@media (min-width: 992px) {
+    .hero-container {
+        flex-direction: row;
+        text-align: left;
+        padding: 0 40px;
+    }
+
+    .hero-content {
+        text-align: left;
+        width: 60%;
+        padding-right: 40px;
+    }
+
+    .lead-1 {
+        font-size: 3rem;
+    }
+
+    .lead-2 {
+        font-size: 5.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero-section-first {
+        padding-top: 100px;
+    }
+    
+    .lead-1 {
+        font-size: 2.2rem;
+    }
+
+    .lead-2 {
+        font-size: 4rem;
+    }
+
+    .hero-section-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .brownie-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brownie-item.large {
+        grid-column: auto;
+    }
+
+    .combo-title {
+        font-size: 1.8rem;
+    }
+
+    .combo-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .combo-cta-action {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .lead-1 {
+        font-size: 2rem;
+    }
+
+    .lead-2 {
+        font-size: 3.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .category-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .lead-1 {
+        font-size: 1.8rem;
+    }
+
+    .lead-2 {
+        font-size: 3rem;
+    }
+
+    .hero-section-first {
+        padding: 100px 0px 60px 0px;
+    }
+
+    .brownie-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .combo-cta-card {
+        padding: 25px 20px;
+    }
+
+    .combo-title {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .combo-subtitle {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .combo-badge {
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .combo-flavors {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .flavor-tag {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .current-price {
+        font-size: 1.6rem;
+    }
+
+    .combo-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .combo-cta-btn {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+}
 </style>
 
 <script>

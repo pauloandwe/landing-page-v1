@@ -155,7 +155,7 @@
             </div>
         </div>
     </section>
-
+<!-- 
     <section class="promo-banner">
         <div class="container">
             <div class="row">
@@ -178,7 +178,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="py-5" style="background-color: var(--light-color);">
         <div class="container">
