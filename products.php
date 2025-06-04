@@ -49,8 +49,34 @@ $products = [
         'image' => "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2020/07/13/bolo-pote-maracuja.jpg",
         'description' => "Kit com 6 brownies sortidos para experimentar todos os sabores"
     ],
-
-
+    [
+        'id' => 8,
+        'name' => "Kit Brownie (6 unidades)",
+        'price' => 45.90,
+        'image' => "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2020/07/13/bolo-pote-maracuja.jpg",
+        'description' => "Kit com 6 brownies sortidos para experimentar todos os sabores"
+    ],
+    [
+        'id' => 9,
+        'name' => "Kit Brownie (6 unidades)",
+        'price' => 45.90,
+        'image' => "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2020/07/13/bolo-pote-maracuja.jpg",
+        'description' => "Kit com 6 brownies sortidos para experimentar todos os sabores"
+    ],
+    [
+        'id' => 10,
+        'name' => "Kit Brownie (6 unidades)",
+        'price' => 45.90,
+        'image' => "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2020/07/13/bolo-pote-maracuja.jpg",
+        'description' => "Kit com 6 brownies sortidos para experimentar todos os sabores"
+    ],
+    [
+        'id' => 11,
+        'name' => "Kit Brownie (6 unidades)",
+        'price' => 45.90,
+        'image' => "https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2020/07/13/bolo-pote-maracuja.jpg",
+        'description' => "Kit com 6 brownies sortidos para experimentar todos os sabores"
+    ],
 ];
 
 if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {

@@ -187,11 +187,15 @@
                 <p class="section-subtitle text-center mb-5">Conheça toda nossa linha e encontre seu brownie favorito</p>
             </div>
 
-            <div class="row">
+            <div class="row" id="outros-sabores-container">
                 <?php
-                foreach (array_slice($products, 3) as $product) {
+                $remaining_products = array_slice($products, 3);
+                $initial_products = array_slice($remaining_products, 0, 3);
+                $hidden_products = array_slice($remaining_products, 3);
+                
+                foreach ($initial_products as $product) {
                 ?>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-4 mb-4 product-item">
                         <div class="product-card product-card-enhanced">
                             <?php if ($product['id'] == 6): ?>
                                 <div class="product-badge product-badge-new">LANÇAMENTO</div>
@@ -243,7 +247,75 @@
                         </div>
                     </div>
                 <?php } ?>
+
+                <?php
+                foreach ($hidden_products as $product) {
+                ?>
+                    <div class="col-md-4 mb-4 product-item product-item-hidden" style="display: none;">
+                        <div class="product-card product-card-enhanced">
+                            <?php if ($product['id'] == 7): ?>
+                                <div class="product-badge product-badge-new">NOVIDADE</div>
+                            <?php endif; ?>
+
+                            <div class="product-image" style="background-image: url('<?= $product['image']; ?>');">
+                                <div class="product-quick-actions">
+                                    <button class="btn-quick-view" data-product-id="<?= $product['id']; ?>">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="shop-button btn-add-cart" data-product-id="<?= $product['id']; ?>">
+                                        <i class="fas fa-shopping-basket"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="product-info">
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <h4 class="product-title"><?= $product['name']; ?></h4>
+
+                                <p class="product-description">
+                                    <?= $product['description']; ?>
+                                    <?php if ($product['id'] == 7): ?>
+                                        <span class="d-block mt-2">Uma combinação especial de sabores que vai surpreender seu paladar!</span>
+                                    <?php endif; ?>
+                                </p>
+
+                                <div class="product-price-box">
+                                    <p class="product-price">R$ <?= number_format($product['price'], 2, ',', '.'); ?></p>
+
+                                    <?php if ($product['price'] > 15): ?>
+                                        <span class="product-installment">ou 3x de R$ <?= number_format($product['price'] / 3, 2, ',', '.'); ?> sem juros</span>
+                                    <?php endif; ?>
+                                </div>
+
+                                <div class="product-action">
+                                    <a href="loja" class="btn btn-primary shop-button"><i class="fas fa-shopping-bag me-2"></i>Comprar</a>
+                                    <button class="btn-wishlist" data-bs-toggle="tooltip" title="Adicionar aos favoritos">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
+
+            <?php if (count($hidden_products) > 0): ?>
+            <div class="text-center mt-4" id="ver-mais-container">
+                <button class="btn-ver-mais-produtos" id="btn-ver-mais">
+                    <span class="btn-text">Ver Mais Produtos</span>
+                    <i class="fas fa-chevron-down ms-2"></i>
+                </button>
+                <p class="mt-2 text-muted small">
+                    Mostrando <?= count($initial_products); ?> de <?= count($remaining_products); ?> produtos
+                </p>
+            </div>
+            <?php endif; ?>
         </div>
     </section>
 
@@ -922,6 +994,79 @@
         position: relative;
     }
 
+    .cta-shop-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+.cta-shop-link:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-ver-mais-produtos {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(75, 46, 43, 0.2);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-ver-mais-produtos:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(75, 46, 43, 0.25);
+}
+
+.btn-ver-mais-produtos:active {
+    transform: translateY(-2px);
+}
+
+.btn-ver-mais-produtos.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.btn-ver-mais-produtos i {
+    transition: transform 0.3s ease;
+}
+
+.btn-ver-mais-produtos:hover i {
+    transform: translateY(3px);
+}
+
+.product-item-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.product-item-hidden.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#ver-mais-container {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
     @media (max-width: 767px) {
         .spotlight-title {
             font-size: 1.8rem;
@@ -1000,20 +1145,6 @@
         padding-left: 25px;
         padding-right: 25px;
     }
-
-    .cta-shop-link {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    transition: all 0.4s ease;
-    z-index: 2;
-}
-
-.cta-shop-link:hover {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
 </style>
 
 <script>
@@ -1132,5 +1263,37 @@
                 }
             });
         });
+
+        // Funcionalidade do botão "Ver Mais Produtos"
+        const btnVerMais = document.getElementById('btn-ver-mais');
+        const verMaisContainer = document.getElementById('ver-mais-container');
+
+        if (btnVerMais) {
+            btnVerMais.addEventListener('click', function() {
+                const button = this;
+                const hiddenProducts = document.querySelectorAll('.product-item-hidden');
+                
+                button.classList.add('loading');
+                button.querySelector('.btn-text').textContent = 'Carregando...';
+                
+                hiddenProducts.forEach((product, index) => {
+                    setTimeout(() => {
+                        product.style.display = 'block';
+                        requestAnimationFrame(() => {
+                            product.classList.add('show');
+                        });
+                    }, index * 200);
+                });
+
+                setTimeout(() => {
+                    verMaisContainer.style.opacity = '0';
+                    verMaisContainer.style.transform = 'translateY(-20px)';
+                    
+                    setTimeout(() => {
+                        verMaisContainer.style.display = 'none';
+                    }, 500);
+                }, hiddenProducts.length * 200 + 500);
+            });
+        }
     });
 </script>
