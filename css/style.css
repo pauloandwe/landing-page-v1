@@ -265,6 +265,7 @@ body {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
     transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.6s ease;
     animation: float 6s infinite ease-in-out;
+    object-fit: cover;
 }
 
 .hero-section-img:hover {
@@ -1222,6 +1223,7 @@ footer {
     .hero-section-img {
         width: 120px;
         height: 120px;
+        object-fit: cover;
     }
 
     .brownie-gallery {
