@@ -2,7 +2,7 @@
     <section class="hero-section-first">
         <div class="container hero-container">
             <div class="hero-content">
-                <img src="img/logo.jpg" class="hero-section-img" alt="Doces Cacau">
+                <video class="hero-section-img" src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay loop muted playsinline></video>
                 <h2 class="lead-1">EXPERIMENTE HOJE!</h2>
                 <h1 class="lead-2">OS MELHORES BROWNIES DA CIDADE</h1>
                 <p class="hero-description">Descubra nossa seleção premium de brownies artesanais, feitos com
