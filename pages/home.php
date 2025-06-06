@@ -1,5 +1,12 @@
 <div id="home">
     <section class="hero-section-first">
+         <div class="hero-video-container">
+        <video autoplay muted loop playsinline class="hero-video">
+        <source src="../video/video-back.mp4" type="video/mp4">            
+            <div class="video-fallback"></div>
+        </video>
+        <div class="hero-video-overlay"></div>
+    </div>
         <div class="container hero-container">
             <div class="hero-content">
                 <img src="img/logo.jpg" class="hero-section-img" alt="Doces Cacau">
@@ -134,7 +141,7 @@
                                 <div class="combo-image-stack">
                                     <img src="https://dabisa.com.br/wp-content/uploads/2024/06/Bolo-de-Pote-Dois-amores-doces-bolos-sobremesas-dabisasabores-vilamatilde-vilacarrao-analiafranco-tatuape-zonalestebolo-zonalestedoces-1.jpeg" alt="Combo Degustação" class="combo-img">
                                 </div>
-                                <a href="produtos" class="combo-cta-btn">
+                                <a href="produtos" class="btn-ver-todos">
                                     <span>Quero Experimentar</span>
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
@@ -370,6 +377,68 @@
 </div>
 
 <style>
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+.hero-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.video-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/back-chocolate.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    display: none;
+}
+
+/* Responsividade móvel */
+@media (max-width: 768px) {
+    .hero-video {
+        display: none;
+    }
+    
+    .video-fallback {
+        display: block !important;
+    }
+    
+    .hero-video-overlay {
+        background-color: var(--primary-color);
+        opacity: 0.8;
+    }
+}
+
   /* ===== VARIÁVEIS CSS ===== */
 :root {
     --primary-color: #4B2E2B;
@@ -447,19 +516,6 @@ body {
     padding: 80px 0;
 }
 
-.hero-section-first:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/img/back-chocolate.png');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.2;
-    z-index: 0;
-}
 
 .hero-container {
     position: relative;
@@ -1018,6 +1074,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    margin-top: 15px;
 }
 
 .delivery-note i {
@@ -1820,4 +1877,32 @@ body {
             });
         }, 500);
     });
+    document.addEventListener('DOMContentLoaded', function() {
+    // Otimização do vídeo de fundo
+    const heroVideo = document.querySelector('.hero-video');
+    const videoFallback = document.querySelector('.video-fallback');
+    
+    if (heroVideo) {
+        // Verifica conexão lenta
+        if ('connection' in navigator && navigator.connection.effectiveType === 'slow-2g') {
+            heroVideo.style.display = 'none';
+            if (videoFallback) videoFallback.style.display = 'block';
+        }
+        
+        // Fallback para erro no vídeo
+        heroVideo.addEventListener('error', function() {
+            this.style.display = 'none';
+            if (videoFallback) videoFallback.style.display = 'block';
+        });
+        
+        // Pausa quando página não está visível
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                heroVideo.pause();
+            } else {
+                heroVideo.play().catch(console.log);
+            }
+        });
+    }
+});
 </script>
