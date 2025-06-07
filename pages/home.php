@@ -47,13 +47,13 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <h3 class="story-title">BROWNIES QUE AQUECEM A ALMA</h3>
+                    <div class="divider mx-auto my-4"></div>
                     <p class="story-text">
                         Há mais de uma década, transformamos momentos comuns em experiências inesquecíveis através dos nossos brownies artesanais.
                         Cada receita nasce da paixão por sabores autênticos e do compromisso com ingredientes selecionados.
                         Nossos brownies não são apenas sobremesas — são abraços em forma de chocolate, capazes de espantar a tristeza
                         e trazer o aconchego que todo mundo merece.
                     </p>
-                    <div class="divider mx-auto my-4"></div>
                 </div>
             </div>
         </div>
