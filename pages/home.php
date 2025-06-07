@@ -513,7 +513,7 @@ body {
     min-height: 700px;
     display: flex;
     align-items: center;
-    padding: 80px 0;
+    padding: 62px 0 80px 0;
 }
 
 
@@ -558,7 +558,7 @@ body {
 .lead-1 {
     font-size: 2.8rem;
     font-weight: 700;
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 5px;
     letter-spacing: 2px;
     animation: fadeInUp 1s forwards 0.3s;
@@ -1699,7 +1699,7 @@ body {
     }
 }
 
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
     .hero-section-first {
         padding-top: 100px;
     }
@@ -1737,7 +1737,7 @@ body {
     .combo-cta-action {
         padding-left: 0;
     }
-}
+} */
 
 @media (max-width: 767px) {
     .lead-1 {

@@ -20,23 +20,7 @@
         </div>
     </section>
 
-    <section class="py-3 bg-white border-bottom category-filter-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <ul class="filter-pills d-flex flex-wrap gap-2 mb-0">
-                        <li class="active"><a href="#" class="filter-pill-btn">Todos</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 text-end mt-3 mt-lg-0">
-                    <span class="special-offer rounded-pill">
-                        <i class="fas fa-tags me-1"></i>
-                        Use o cupom <strong>BROWNIE10</strong> e ganhe 10% OFF
-                    </span>
-                </div>
-            </div>
-        </div>
-    </section>
+ 
 
     <section class="py-5 bg-white spotlight-section">
         <div class="container">
