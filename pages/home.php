@@ -513,7 +513,7 @@ body {
     min-height: 700px;
     display: flex;
     align-items: center;
-    padding: 62px 0 80px 0;
+    padding: 30px 0 80px 0;
 }
 
 
@@ -539,8 +539,7 @@ body {
     border: 6px solid var(--cream);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
     transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.6s ease;
-    animation: float 6s infinite ease-in-out;
-}
+    animation: float 6s infinite ease-in-out;}
 
 .hero-section-img:hover {
     transform: scale(1.1) rotate(5deg);
@@ -558,10 +557,10 @@ body {
 .lead-1 {
     font-size: 2.8rem;
     font-weight: 700;
-    margin-top: 15px;
+    margin-top: 0px;
     margin-bottom: 5px;
     letter-spacing: 2px;
-    animation: fadeInUp 1s forwards 0.3s;
+    animation: fadeInUp 0.8s forwards 0.3s;
 }
 
 .lead-2 {
@@ -574,7 +573,7 @@ body {
     letter-spacing: 2px;
     line-height: 1;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 1s forwards 0.6s;
+    animation: fadeInUp 0.8s forwards 0.6s;
 }
 
 .hero-description {
@@ -585,7 +584,7 @@ body {
     max-width: 600px;
     line-height: 1.7;
     opacity: 0;
-    animation: fadeInUp 1s forwards 0.9s;
+    animation: fadeInUp 0.8s forwards 0.9s;
 }
 
 .hero-section-first .btn-primary {
@@ -1699,7 +1698,7 @@ body {
     }
 }
 
-/* @media (max-width: 991px) {
+@media (max-width: 991px) {
     .hero-section-first {
         padding-top: 100px;
     }
@@ -1737,7 +1736,7 @@ body {
     .combo-cta-action {
         padding-left: 0;
     }
-} */
+}
 
 @media (max-width: 767px) {
     .lead-1 {
