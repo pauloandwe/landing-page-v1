@@ -33,11 +33,12 @@ $(document).ready(function () {
                     title: "Mensagem enviada com sucesso! Em breve entraremos em contato.",
                     icon: "success",
                     draggable: true
-                }); form[0].reset();
+                });
+                form[0].reset();
             },
             error: function (xhr, status, error) {
                 Swal.fire({
-                    title: "Mensagem enviada com sucesso! Em breve entraremos em contato.",
+                    title: "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.",
                     icon: "error",
                     draggable: true
                 });
