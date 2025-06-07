@@ -26,7 +26,7 @@
 
                 <a href="produtos" class="btn btn-lg btn-primary">Explorar Sabores <i class="fas fa-arrow-right ms-2"></i></a>
 
-                <p class="delivery-info mt-3">
+                <p class="delivery-info">
                     <i class="fas fa-truck me-2"></i> Entrega expressa para toda região!
                 </p>
             </div>
@@ -459,7 +459,7 @@ body {
 /* ===== ANIMATIONS & KEYFRAMES ===== */
 @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-4px); }
 }
 
 @keyframes fadeInUp {
@@ -513,7 +513,7 @@ body {
     min-height: 700px;
     display: flex;
     align-items: center;
-    padding: 30px 0 80px 0;
+    padding: 50px 0 80px 0;
 }
 
 
