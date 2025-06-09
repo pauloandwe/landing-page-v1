@@ -1063,12 +1063,14 @@ footer {
     border-radius: 50%;
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none !important; /* Adicione esta linha */
 }
 
 .whatsapp-button a:hover {
     background-color: #20BA5C;
     transform: scale(1.15) rotate(10deg);
     box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+    text-decoration: none !important; /* Adicione esta linha também */
 }
 
 .whatsapp-button i {

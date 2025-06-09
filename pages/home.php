@@ -2,7 +2,7 @@
     <section class="hero-section-first">
          <div class="hero-video-container">
         <video autoplay muted loop playsinline class="hero-video">
-        <source src="../video/video-back.mp4" type="video/mp4">            
+        <source src="video/video-back.mp4" type="video/mp4">            
             <div class="video-fallback"></div>
         </video>
         <div class="hero-video-overlay"></div>
@@ -354,11 +354,11 @@
                 </div>
                 <div class="col-12">
                     <div class="client-logos">
-                        <img src="../img/coca.webp" width="160px" alt="Cliente Corporativo 1" class="client-logo">
-                        <img src="../img/coca.webp" width="160px" alt="Cliente Corporativo 2" class="client-logo">
-                        <img src="../img/coca.webp" width="160px" alt="Cliente Corporativo 3" class="client-logo">
-                        <img src="../img/coca.webp" width="160px" alt="Cliente Corporativo 4" class="client-logo">
-                        <img src="../img/coca.webp" width="160px" alt="Cliente Corporativo 4" class="client-logo">
+                        <img src="img/coca.webp" width="160px" alt="Cliente Corporativo 1" class="client-logo">
+                        <img src="img/coca.webp" width="160px" alt="Cliente Corporativo 2" class="client-logo">
+                        <img src="img/coca.webp" width="160px" alt="Cliente Corporativo 3" class="client-logo">
+                        <img src="img/coca.webp" width="160px" alt="Cliente Corporativo 4" class="client-logo">
+                        <img src="img/coca.webp" width="160px" alt="Cliente Corporativo 4" class="client-logo">
                     </div>
                 </div>
             </div>
@@ -513,7 +513,7 @@ body {
     min-height: 700px;
     display: flex;
     align-items: center;
-    padding: 50px 0 80px 0;
+    padding: 35px 0 80px 0;
 }
 
 
