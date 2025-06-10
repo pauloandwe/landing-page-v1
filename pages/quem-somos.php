@@ -239,10 +239,10 @@
                 <div class="col-md-4 mb-4">
                     <div class="team-card">
                         <div class="team-img-container">
-                            <img src="img/geo.jpg" alt="João Santos" class="team-img">
+                            <img src="img/geo.jpg" alt="Geovana" class="team-img">
                         </div>
                         <div class="team-content">
-                            <h4 class="team-name">João Santos</h4>
+                            <h4 class="team-name">Geovana</h4>
                             <p class="team-role">Co-fundador & Diretor Criativo</p>
                             <p class="team-bio">Com um talento natural para combinações de sabores inovadoras, João é responsável por desenvolver novos produtos e garantir que cada brownie seja uma experiência única.</p>
                             <div class="team-social">
@@ -688,6 +688,7 @@
     .team-img {
         width: 100%;
         height: 100%;
+        object-position: top;
         object-fit: cover;
         transition: transform 0.5s ease;
     }

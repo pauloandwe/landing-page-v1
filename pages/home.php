@@ -27,7 +27,7 @@
                 <a href="produtos" class="btn btn-lg btn-primary">Explorar Sabores <i class="fas fa-arrow-right ms-2"></i></a>
 
                 <p class="delivery-info">
-                    <i class="fas fa-truck me-2"></i> Entrega expressa para toda região!
+                    <i class="fas fa-truck me-2"></i> Entregamos em toda Campo Mourão e região!
                 </p>
             </div>
 
@@ -833,7 +833,7 @@ body {
 
 /* ===== COMBO CTA SECTION ===== */
 .combo-cta-section {
-    padding: 120px 0;
+    padding: 180px 0;
     background-color: var(--primary-color);
     color: white;
     position: relative;
@@ -847,7 +847,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://media.istockphoto.com/id/1130692246/photo/homemade-chocolate-brownies-shot-from-above.jpg?s=612x612&w=0&k=20&c=vwXHR_DXORJNqHA8ufMhD38y4YqfPvChZioxT0bZjQQ=');
+    background-image: url('img/muitos-brownies.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1359,7 +1359,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://media.istockphoto.com/id/1130692246/photo/homemade-chocolate-brownies-shot-from-above.jpg?s=612x612&w=0&k=20&c=vwXHR_DXORJNqHA8ufMhD38y4YqfPvChZioxT0bZjQQ=');
+    background-image: url('img/back-bro.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
