@@ -35,9 +35,9 @@
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="about-image-wrapper">
                         <div class="about-image main-image">
-                            <img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" alt="Nossa história" class="img-fluid shadow-lg rounded-lg">
+                            <img src="img/brownie-artesanal.png" alt="Nossa história - Brownies artesanais" class="img-fluid">
                         </div>
-
+                        <div class="image-decoration"></div>
                     </div>
                 </div>
 
@@ -267,30 +267,30 @@
                 <div class="row justify-content-center">
                     <div class="col-6 col-md-3 mb-4">
                         <div class="media-badge">
-                            <img height="250px" src="https://imgs.search.brave.com/cdzG1WM6qr7E4fHxswvIXGMK1NVcJPsrcvYk_kB_Ruw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzkxOHFpR3VaMFhT/LmpwZw" alt="Revista Gastronomia" class="media-badge-img">
+                            <img height="150px" src="img/coca.webp" alt="Revista Gastronomia" class="media-badge-img">
                             <p class="media-badge-text">"Os melhores brownies artesanais do Brasil"</p>
                             <span class="media-source">Revista Gastronomia, 2023</span>
                         </div>
                     </div>
                     <div class="col-6 col-md-3 mb-4">
                         <div class="media-badge">
-                            <img height="250px" src="https://imgs.search.brave.com/cdzG1WM6qr7E4fHxswvIXGMK1NVcJPsrcvYk_kB_Ruw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzkxOHFpR3VaMFhT/LmpwZw" alt="Revista Gastronomia" class="media-badge-img">
-                            <p class="media-badge-text">"Os melhores brownies artesanais do Brasil"</p>
-                            <span class="media-source">Revista Gastronomia, 2023</span>
+                            <img height="150px" src="img/coca.webp" alt="Revista Gastronomia" class="media-badge-img">
+                            <p class="media-badge-text">"Excelência em sabor e qualidade"</p>
+                            <span class="media-source">Jornal do Sabor, 2023</span>
                         </div>
                     </div>
                     <div class="col-6 col-md-3 mb-4">
                         <div class="media-badge">
-                            <img height="250px" src="https://imgs.search.brave.com/cdzG1WM6qr7E4fHxswvIXGMK1NVcJPsrcvYk_kB_Ruw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzkxOHFpR3VaMFhT/LmpwZw" alt="Revista Gastronomia" class="media-badge-img">
-                            <p class="media-badge-text">"Os melhores brownies artesanais do Brasil"</p>
-                            <span class="media-source">Revista Gastronomia, 2023</span>
+                            <img height="150px" src="img/coca.webp" alt="Revista Gastronomia" class="media-badge-img">
+                            <p class="media-badge-text">"Inovação em doces artesanais"</p>
+                            <span class="media-source">Portal Gourmet, 2024</span>
                         </div>
                     </div>
                     <div class="col-6 col-md-3 mb-4">
                         <div class="media-badge">
-                            <img height="250px" src="https://imgs.search.brave.com/cdzG1WM6qr7E4fHxswvIXGMK1NVcJPsrcvYk_kB_Ruw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzkxOHFpR3VaMFhT/LmpwZw" alt="Revista Gastronomia" class="media-badge-img">
-                            <p class="media-badge-text">"Os melhores brownies artesanais do Brasil"</p>
-                            <span class="media-source">Revista Gastronomia, 2023</span>
+                            <img height="150px" src="img/coca.webp" alt="Revista Gastronomia" class="media-badge-img">
+                            <p class="media-badge-text">"Tradição e modernidade em harmonia"</p>
+                            <span class="media-source">TV Culinária, 2024</span>
                         </div>
                     </div>
                 </div>
@@ -325,58 +325,55 @@
         font-weight: 500;
     }
 
+    /* IMAGEM PRINCIPAL - CORRIGIDA E RESPONSIVA */
     .about-image-wrapper {
         position: relative;
-        height: 450px;
+        width: 100%;
+        height: auto;
+        min-height: 350px;
     }
 
     .about-image.main-image {
         position: relative;
-        z-index: 1;
+        z-index: 2;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        background: white;
+        padding: 10px;
+        height: 100%;
+    }
+
+    .about-image.main-image img {
+        width: 100%;
+        height: auto;
+        min-height: 350px;
+        object-fit: cover;
         border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        display: block;
     }
 
-    .about-image.floating-image-1 {
+    /* Elemento decorativo para dar mais vida à imagem */
+    .image-decoration {
         position: absolute;
-        top: -30px;
-        right: -30px;
-        width: 140px;
-        height: 140px;
-        z-index: 2;
+        top: -20px;
+        right: -20px;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, var(--highlight-color), var(--secondary-color));
         border-radius: 50%;
-        overflow: hidden;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        border: 5px solid white;
+        opacity: 0.8;
+        z-index: 1;
+        animation: float 6s ease-in-out infinite;
     }
 
-    .about-image.floating-image-2 {
-        position: absolute;
-        bottom: -20px;
-        right: 50px;
-        width: 160px;
-        height: 160px;
-        z-index: 2;
-        border-radius: 50%;
-        overflow: hidden;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        border: 5px solid white;
-    }
-
-    .image-badge {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%) translateY(50%);
-        background-color: var(--highlight-color);
-        color: white;
-        padding: 5px 15px;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        white-space: nowrap;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    @keyframes float {
+        0%, 100% { 
+            transform: translateY(0px) rotate(0deg); 
+        }
+        50% { 
+            transform: translateY(-10px) rotate(5deg); 
+        }
     }
 
     .about-content {
@@ -449,82 +446,6 @@
         font-size: 0.9rem;
         text-transform: uppercase;
         letter-spacing: 1px;
-    }
-
-    .process-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-    }
-
-    .process-icon {
-        position: relative;
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: -40px auto 20px;
-        color: white;
-        font-size: 30px;
-        box-shadow: 0 10px 20px rgba(75, 46, 43, 0.3);
-        z-index: 1;
-    }
-
-    .process-number {
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        width: 30px;
-        height: 30px;
-        background-color: var(--highlight-color);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 14px;
-        font-weight: 700;
-        color: white;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .process-card {
-        background-color: white;
-        border-radius: 15px;
-        padding: 30px;
-        height: 100%;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        transition: all 0.4s ease;
-        border-bottom: 4px solid var(--secondary-color);
-        border-top: 2px solid var(--secondary-color);
-        position: relative;
-        z-index: 1;
-        overflow: hidden;
-    }
-
-    .process-card h4 {
-        text-align: center;
-        color: var(--primary-color);
-        font-family: 'Playfair Display', serif;
-        font-weight: 700;
-        margin-bottom: 15px;
-        padding: 0 20px;
-    }
-
-    .process-card p {
-        padding: 0 25px;
-        text-align: center;
-        color: #555;
-        margin-bottom: 25px;
-        flex-grow: 1;
-    }
-
-    .process-image {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        margin-top: auto;
     }
 
     .value-card {
@@ -768,6 +689,8 @@
         filter: grayscale(100%);
         opacity: 0.7;
         transition: all 0.3s ease;
+        width: 100%;
+        object-fit: contain;
     }
 
     .media-badge:hover .media-badge-img {
@@ -800,7 +723,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('https://images.unsplash.com/photo-1606312619070-d48b4c652a52?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80');
+        background-image: url('img/back-bro.jpg');
         background-size: cover;
         background-position: center;
         opacity: 0.2;
@@ -814,20 +737,28 @@
         z-index: 1;
     }
 
-    .process-section {
-        margin-top: 40px;
-    }
-
     .box-center {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
+    /* RESPONSIVIDADE MELHORADA */
     @media (max-width: 991px) {
         .about-image-wrapper {
-            height: 400px;
-            margin-bottom: 60px;
+            min-height: 300px;
+            margin-bottom: 40px;
+        }
+
+        .about-image.main-image img {
+            min-height: 300px;
+        }
+
+        .image-decoration {
+            width: 80px;
+            height: 80px;
+            top: -15px;
+            right: -15px;
         }
 
         .testimonial-about-card.featured {
@@ -837,21 +768,31 @@
         .testimonial-about-card.featured:hover {
             transform: translateY(-10px);
         }
+
+        .quote-box {
+            margin-left: 0;
+        }
     }
 
     @media (max-width: 767px) {
         .about-image-wrapper {
-            height: 350px;
+            min-height: 280px;
+            margin-bottom: 30px;
         }
 
-        .floating-image-1 {
-            width: 100px;
-            height: 100px;
+        .about-image.main-image {
+            padding: 8px;
         }
 
-        .floating-image-2 {
-            width: 120px;
-            height: 120px;
+        .about-image.main-image img {
+            min-height: 280px;
+        }
+
+        .image-decoration {
+            width: 60px;
+            height: 60px;
+            top: -10px;
+            right: -10px;
         }
 
         .stat-number {
@@ -864,10 +805,47 @@
 
         .quote-box {
             margin-left: 0;
+            padding: 20px;
         }
 
-        .process-card h4 {
-            font-size: 1.2rem;
+        .quote-icon {
+            font-size: 2rem;
+            top: -10px;
+            left: -15px;
+        }
+
+        .quote-text {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .about-image-wrapper {
+            min-height: 250px;
+        }
+
+        .about-image.main-image img {
+            min-height: 250px;
+        }
+
+        .image-decoration {
+            width: 50px;
+            height: 50px;
+            top: -8px;
+            right: -8px;
+        }
+
+        .quote-box {
+            padding: 15px;
+            margin-left: 0;
+        }
+
+        .quote-text {
+            font-size: 1rem;
+        }
+
+        .media-badge-img {
+            height: 120px !important;
         }
     }
 </style>
