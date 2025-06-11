@@ -1,0 +1,368 @@
+/* CSS para Sistema de Favoritos */
+
+/* Estilização dos contadores de favoritos */
+.favorite-counter {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+    z-index: 5;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    line-height: 1; 
+    text-align: center; 
+    padding-top: 7px;
+}
+
+.favorite-counter:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.5);
+}
+
+/* Animação de pulso para contadores */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+    }
+    50% {
+        box-shadow: 0 2px 15px rgba(255, 107, 107, 0.6);
+    }
+    100% {
+        box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+    }
+}
+
+/* Estilização dos botões de favorito */
+.btn-wishlist {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    color: #777;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-wishlist:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 92, 108, 0.3) 0%, transparent 70%);
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.btn-wishlist:hover:before {
+    width: 100px;
+    height: 100px;
+}
+
+.btn-wishlist:hover {
+    background-color: #ffedee;
+    color: #ff5c6c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 92, 108, 0.2);
+}
+
+.btn-wishlist:active {
+    transform: translateY(0) scale(0.95);
+}
+
+.btn-wishlist i {
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-wishlist:hover i {
+    transform: scale(1.2);
+}
+
+/* Estado favorito ativo */
+.btn-wishlist.favorited {
+    background-color: #ffedee;
+    color: #ff5c6c;
+}
+
+.btn-wishlist.favorited i {
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+/* Animação de batimento do coração */
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.1);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(1);
+    }
+}
+
+/* Tooltip de feedback */
+.favorite-tooltip {
+    position: absolute;
+    background: linear-gradient(135deg, #333, #555);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    z-index: 1000;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.favorite-tooltip:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Contador para brownies na home */
+.brownie-item .favorite-counter {
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    box-shadow: 0 3px 10px rgba(255, 107, 107, 0.4);
+    line-height: 1; /* Adiciona esta linha também */
+}
+
+/* Efeito de loading para sincronização */
+.favorites-syncing {
+    position: relative;
+}
+
+.favorites-syncing:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    background: #4CAF50;
+    border-radius: 50%;
+    animation: sync-indicator 1s ease-in-out infinite;
+}
+
+@keyframes sync-indicator {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+}
+
+/* Seção de produtos mais favoritados */
+.most-favorited-section {
+    background: linear-gradient(135deg, #f8f3e9 0%, #fff 100%);
+    padding: 60px 0;
+    margin: 40px 0;
+}
+
+.most-favorited-title {
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.most-favorited-title:after {
+    content: '❤️';
+    position: absolute;
+    top: -10px;
+    right: -30px;
+    font-size: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.favorited-product-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.favorited-product-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
+}
+
+.favorited-product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(255, 107, 107, 0.15);
+}
+
+.favorited-product-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.favorited-product-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.favorited-product-count {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Badge de produto popular */
+.popular-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .favorite-counter {
+        width: 22px;
+        height: 22px;
+        font-size: 10px;
+        top: 8px;
+        left: 8px;
+        line-height: 1; /* Adiciona esta linha para responsivo */
+    }
+    
+    .brownie-item .favorite-counter {
+        width: 26px;
+        height: 26px;
+        font-size: 11px;
+        top: 12px;
+        left: 12px;
+        line-height: 1; /* Adiciona esta linha para responsivo */
+    }
+    
+    .btn-wishlist {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .btn-wishlist i {
+        font-size: 14px;
+    }
+    
+    .favorite-tooltip {
+        font-size: 10px;
+        padding: 6px 10px;
+        top: -40px;
+    }
+}
+
+/* Animação de entrada para contadores */
+@keyframes counterAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.favorite-counter.new {
+    animation: counterAppear 0.5s ease-out;
+}
+
+/* Efeito de partículas ao favoritar */
+.heart-particles {
+    position: absolute;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.heart-particle {
+    position: absolute;
+    color: #ff6b6b;
+    font-size: 16px;
+    animation: heartParticle 1s ease-out forwards;
+}
+
+@keyframes heartParticle {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.5);
+    }
+}
