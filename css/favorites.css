@@ -1,6 +1,4 @@
-/* CSS para Sistema de Favoritos */
 
-/* Estilização dos contadores de favoritos */
 .favorite-counter {
     position: absolute;
     top: 10px;
@@ -21,7 +19,6 @@
     animation: pulse 2s infinite;
     line-height: 1; 
     text-align: center; 
-    padding-top: 7px;
 }
 
 .favorite-counter:hover {
@@ -29,7 +26,6 @@
     box-shadow: 0 4px 12px rgba(255, 107, 107, 0.5);
 }
 
-/* Animação de pulso para contadores */
 @keyframes pulse {
     0% {
         box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
