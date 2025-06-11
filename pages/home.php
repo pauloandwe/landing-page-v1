@@ -65,7 +65,7 @@
             <p class="text-center mb-5">Brownies artesanais preparados com ingredientes selecionados e muito
                 amor para momentos que valem a pena</p>
 
-            <div class="brownie-gallery">
+           <div class="brownie-gallery">
                 <?php
                 $featuredItems = array_slice($products, 0, 7);
                 $largeItems = [1, 5];
@@ -73,9 +73,18 @@
                 foreach ($featuredItems as $index => $product) {
                     $isLarge = in_array($index, $largeItems) ? 'large' : '';
                     $badge = '';
-                    if ($index == 1) $badge = '<div class="product-badge">MAIS VENDIDO</div>';
-                    if ($index == 3) $badge = '<div class="product-badge product-badge-new">NOVO SABOR</div>';
-                    if ($index == 5) $badge = '<div class="product-badge" style="background-color: #4B2E2B;">EDIÇÃO LIMITADA</div>';
+                    
+                    // Sistema de badges baseado nas propriedades do produto
+                    if ($product['is_bestseller']) {
+                        $badge = '<div class="product-badge">BEST SELLER</div>';
+                    } elseif (isset($product['badge'])) {
+                        $badgeClass = $product['is_new'] ? 'product-badge-new' : '';
+                        $badge = '<div class="product-badge ' . $badgeClass . '">' . $product['badge'] . '</div>';
+                    } elseif ($product['is_new']) {
+                        $badge = '<div class="product-badge product-badge-new">NOVO SABOR</div>';
+                    } elseif ($product['is_featured']) {
+                        $badge = '<div class="product-badge" style="background-color: #4B2E2B;">DESTAQUE</div>';
+                    }
                 ?>
                     <div class="brownie-item <?= $isLarge; ?>" style="--i:<?= $index; ?>">
                         <a href="produtos">
@@ -86,6 +95,9 @@
                                     <h4><?= $product['name']; ?></h4>
                                     <p><?= $product['description']; ?></p>
                                     <div class="brownie-price">R$ <?= number_format($product['price'], 2, ',', '.'); ?></div>
+                                    <?php if (isset($product['old_price'])): ?>
+                                        <div class="brownie-old-price">R$ <?= number_format($product['old_price'], 2, ',', '.'); ?></div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </a>

@@ -1,3 +1,23 @@
+<?php
+// Encontrar o produto best seller
+$bestseller = null;
+foreach ($products as $product) {
+    if ($product['is_bestseller']) {
+        $bestseller = $product;
+        break;
+    }
+}
+
+// Separar produtos por categoria
+$featured_products = array_filter($products, function($product) {
+    return $product['is_featured'] && !$product['is_bestseller'];
+});
+
+$other_products = array_filter($products, function($product) {
+    return !$product['is_featured'] && !$product['is_bestseller'];
+});
+?>
+
 <div id="produtos">
     <section class="hero-section hero-section-product">
         <div class="container">
@@ -20,52 +40,68 @@
         </div>
     </section>
 
- 
-
+    <?php if ($bestseller): ?>
     <section class="py-5 bg-white spotlight-section">
         <div class="container">
             <div class="spotlight-product">
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4 mb-lg-0">
                         <div class="spotlight-image">
-                            <img src="https://www.academiaassai.com.br/sites/default/files/receita-de-brownie.jpg" alt="Brownie Destaque" class="img-fluid shadow">
-                            <div class="spotlight-badge">NOSSO BEST-SELLER</div>
+                            <img src="<?= $bestseller['image']; ?>" alt="<?= $bestseller['name']; ?>" class="img-fluid shadow">
+                            <div class="spotlight-badge"><?= $bestseller['spotlight_badge']; ?></div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="spotlight-content">
-                            <span class="spotlight-category">Edição Especial</span>
-                            <h2 class="spotlight-title">Brownie no Pote Duplo Chocolate</h2>
+                            <span class="spotlight-category"><?= $bestseller['spotlight_category']; ?></span>
+                            <h2 class="spotlight-title"><?= $bestseller['name']; ?></h2>
                             <div class="spotlight-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="ms-2">4.9 (156 avaliações)</span>
+                                <?php 
+                                $rating = $bestseller['rating'];
+                                $fullStars = floor($rating);
+                                $hasHalfStar = ($rating - $fullStars) >= 0.5;
+                                
+                                for ($i = 0; $i < $fullStars; $i++) {
+                                    echo '<i class="fas fa-star"></i>';
+                                }
+                                if ($hasHalfStar) {
+                                    echo '<i class="fas fa-star-half-alt"></i>';
+                                }
+                                ?>
+                                <span class="ms-2"><?= $rating; ?> (<?= $bestseller['reviews_count']; ?> avaliações)</span>
                             </div>
                             <p class="spotlight-description">
-                                Uma <strong>explosão de sabor</strong> em cada colherada! Nosso brownie no pote combina a textura úmida e macia do brownie tradicional com camadas generosas de ganache cremosa de chocolate belga. Finalizamos com um toque especial de crocante que transforma cada mordida em uma experiência inesquecível.
+                                <?= $bestseller['description']; ?>
                             </p>
+                            
+                            <?php if (isset($bestseller['features'])): ?>
                             <p class="spotlight-features">
-                                <span><i class="fas fa-check-circle"></i> Ingredientes premium</span>
-                                <span><i class="fas fa-check-circle"></i> Sem conservantes</span>
-                                <span><i class="fas fa-check-circle"></i> Validade: 7 dias refrigerado</span>
+                                <?php foreach ($bestseller['features'] as $feature): ?>
+                                <span><i class="fas fa-check-circle"></i> <?= $feature; ?></span>
+                                <?php endforeach; ?>
                             </p>
+                            <?php endif; ?>
+                            
                             <div class="spotlight-price-box">
                                 <div class="d-flex align-items-end">
-                                    <span class="spotlight-price">R$ 15,90</span>
-                                    <span class="spotlight-old-price ms-2">R$ 18,90</span>
+                                    <span class="spotlight-price">R$ <?= number_format($bestseller['price'], 2, ',', '.'); ?></span>
+                                    <?php if (isset($bestseller['old_price'])): ?>
+                                    <span class="spotlight-old-price ms-2">R$ <?= number_format($bestseller['old_price'], 2, ',', '.'); ?></span>
+                                    <?php endif; ?>
                                 </div>
-                                <span class="spotlight-discount">15% OFF</span>
+                                <?php if (isset($bestseller['discount'])): ?>
+                                <span class="spotlight-discount"><?= $bestseller['discount']; ?>% OFF</span>
+                                <?php endif; ?>
                             </div>
                             <div class="spotlight-actions">
-                                <button class="btn btn-lg btn-primary shop-button">
+                                <button class="btn btn-lg btn-primary shop-button" data-product-id="<?= $bestseller['id']; ?>">
                                     <i class="fas fa-shopping-bag me-2"></i> Comprar agora
                                 </button>
+                                <?php if (isset($bestseller['stock_warning'])): ?>
                                 <div class="spotlight-stock">
-                                    <i class="fas fa-exclamation-circle"></i> Não perca essa oportunidade!
+                                    <i class="fas fa-exclamation-circle"></i> <?= $bestseller['stock_warning']; ?>
                                 </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -73,6 +109,7 @@
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
     <section class="py-5 bg-white products-grid-section">
         <div class="container">
@@ -83,12 +120,13 @@
 
             <div class="row">
                 <?php
-                foreach (array_slice($products, 0, 3) as $product) {
+                $featured_slice = array_slice($featured_products, 0, 3);
+                foreach ($featured_slice as $product) {
                 ?>
                     <div class="col-md-4 mb-4">
                         <div class="product-card product-card-enhanced">
-                            <?php if ($product['id'] == 2): ?>
-                                <div class="product-badge">MAIS VENDIDO</div>
+                            <?php if (isset($product['badge'])): ?>
+                                <div class="product-badge <?= $product['is_new'] ? 'product-badge-new' : '' ?>"><?= $product['badge']; ?></div>
                             <?php endif; ?>
 
                             <div class="product-image" style="background-image: url('<?= $product['image']; ?>');">
@@ -104,18 +142,27 @@
 
                             <div class="product-info">
                                 <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+                                    <?php 
+                                    $rating = $product['rating'];
+                                    $fullStars = floor($rating);
+                                    $hasHalfStar = ($rating - $fullStars) >= 0.5;
+                                    
+                                    for ($i = 0; $i < $fullStars; $i++) {
+                                        echo '<i class="fas fa-star"></i>';
+                                    }
+                                    if ($hasHalfStar) {
+                                        echo '<i class="fas fa-star-half-alt"></i>';
+                                    }
+                                    // Preencher estrelas vazias se necessário
+                                    $totalStars = $fullStars + ($hasHalfStar ? 1 : 0);
+                                    for ($i = $totalStars; $i < 5; $i++) {
+                                        echo '<i class="far fa-star"></i>';
+                                    }
+                                    ?>
                                 </div>
                                 <h4 class="product-title"><?= $product['name']; ?></h4>
                                 <p class="product-description">
                                     <?= $product['description']; ?>
-                                    <?php if ($product['id'] == 1): ?>
-                                        <span class="d-block mt-2">Perfeito para quem ama aquela textura que derrete na boca com explosão de sabor a cada mordida.</span>
-                                    <?php endif; ?>
                                 </p>
 
                                 <div class="product-price-box">
@@ -139,30 +186,6 @@
             </div>
         </div>
     </section>
-    <!-- 
-    <section class="promo-banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <h3 class="promo-title">EXPERIMENTE NOSSO COMBO DEGUSTAÇÃO</h3>
-                    <p class="promo-description">6 mini brownies com diferentes sabores para você conhecer toda nossa linha!</p>
-                    <div class="combo-details mb-3">
-                        <p class="mb-1"><i class="fas fa-check-circle me-2"></i> Tradicional, Nutella, Maracujá, Doce de Leite, Nozes e Morango</p>
-                        <p class="mb-1"><i class="fas fa-check-circle me-2"></i> Embalagem especial para presente</p>
-                        <p class="mb-1"><i class="fas fa-check-circle me-2"></i> <span class="price-highlight">De <strike>R$ 59,90</strike> por apenas <strong>R$ 45,90</strong></span></p>
-                    </div>
-                    <div class="promo-badge">ECONOMIZE 10%</div>
-                    <a href="produtos" class="cta-button mx-2 mt-2">
-                        <span>Aproveitar oferta</span>
-                        <i class="fas fa-long-arrow-alt-right"></i>
-                    </a>
-                </div>
-                <div class="col-lg-5 text-end d-none d-lg-block">
-                    <img src="https://dabisa.com.br/wp-content/uploads/2024/06/Bolo-de-Pote-Dois-amores-doces-bolos-sobremesas-dabisasabores-vilamatilde-vilacarrao-analiafranco-tatuape-zonalestebolo-zonalestedoces-1.jpeg" alt="Combo Degustação" class="img-fluid promo-image">
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <section class="py-5" style="background-color: var(--light-color);">
         <div class="container">
@@ -173,16 +196,15 @@
 
             <div class="row" id="outros-sabores-container">
                 <?php
-                $remaining_products = array_slice($products, 3);
-                $initial_products = array_slice($remaining_products, 0, 3);
-                $hidden_products = array_slice($remaining_products, 3);
+                $other_slice = array_slice($other_products, 0, 3);
+                $hidden_products = array_slice($other_products, 3);
 
-                foreach ($initial_products as $product) {
+                foreach ($other_slice as $product) {
                 ?>
                     <div class="col-md-4 mb-4 product-item">
                         <div class="product-card product-card-enhanced">
-                            <?php if ($product['id'] == 6): ?>
-                                <div class="product-badge product-badge-new">LANÇAMENTO</div>
+                            <?php if (isset($product['badge'])): ?>
+                                <div class="product-badge <?= $product['is_new'] ? 'product-badge-new' : '' ?>"><?= $product['badge']; ?></div>
                             <?php endif; ?>
 
                             <div class="product-image" style="background-image: url('<?= $product['image']; ?>');">
@@ -198,19 +220,27 @@
 
                             <div class="product-info">
                                 <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
+                                    <?php 
+                                    $rating = $product['rating'];
+                                    $fullStars = floor($rating);
+                                    $hasHalfStar = ($rating - $fullStars) >= 0.5;
+                                    
+                                    for ($i = 0; $i < $fullStars; $i++) {
+                                        echo '<i class="fas fa-star"></i>';
+                                    }
+                                    if ($hasHalfStar) {
+                                        echo '<i class="fas fa-star-half-alt"></i>';
+                                    }
+                                    $totalStars = $fullStars + ($hasHalfStar ? 1 : 0);
+                                    for ($i = $totalStars; $i < 5; $i++) {
+                                        echo '<i class="far fa-star"></i>';
+                                    }
+                                    ?>
                                 </div>
                                 <h4 class="product-title"><?= $product['name']; ?></h4>
 
                                 <p class="product-description">
                                     <?= $product['description']; ?>
-                                    <?php if ($product['id'] == 6): ?>
-                                        <span class="d-block mt-2">Ideal para presentear ou surpreender em momentos especiais. Nosso kit é o presente perfeito!</span>
-                                    <?php endif; ?>
                                 </p>
 
                                 <div class="product-price-box">
@@ -237,8 +267,8 @@
                 ?>
                     <div class="col-md-4 mb-4 product-item product-item-hidden" style="display: none;">
                         <div class="product-card product-card-enhanced">
-                            <?php if ($product['id'] == 7): ?>
-                                <div class="product-badge product-badge-new">NOVIDADE</div>
+                            <?php if (isset($product['badge'])): ?>
+                                <div class="product-badge <?= $product['is_new'] ? 'product-badge-new' : '' ?>"><?= $product['badge']; ?></div>
                             <?php endif; ?>
 
                             <div class="product-image" style="background-image: url('<?= $product['image']; ?>');">
@@ -254,19 +284,27 @@
 
                             <div class="product-info">
                                 <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
+                                    <?php 
+                                    $rating = $product['rating'];
+                                    $fullStars = floor($rating);
+                                    $hasHalfStar = ($rating - $fullStars) >= 0.5;
+                                    
+                                    for ($i = 0; $i < $fullStars; $i++) {
+                                        echo '<i class="fas fa-star"></i>';
+                                    }
+                                    if ($hasHalfStar) {
+                                        echo '<i class="fas fa-star-half-alt"></i>';
+                                    }
+                                    $totalStars = $fullStars + ($hasHalfStar ? 1 : 0);
+                                    for ($i = $totalStars; $i < 5; $i++) {
+                                        echo '<i class="far fa-star"></i>';
+                                    }
+                                    ?>
                                 </div>
                                 <h4 class="product-title"><?= $product['name']; ?></h4>
 
                                 <p class="product-description">
                                     <?= $product['description']; ?>
-                                    <?php if ($product['id'] == 7): ?>
-                                        <span class="d-block mt-2">Uma combinação especial de sabores que vai surpreender seu paladar!</span>
-                                    <?php endif; ?>
                                 </p>
 
                                 <div class="product-price-box">
@@ -296,7 +334,7 @@
                         <i class="fas fa-chevron-down ms-2"></i>
                     </button>
                     <p class="mt-2 text-muted small">
-                        Mostrando <?= count($initial_products); ?> de <?= count($remaining_products); ?> produtos
+                        Mostrando <?= count($other_slice); ?> de <?= count($other_products); ?> produtos
                     </p>
                 </div>
             <?php endif; ?>
@@ -452,14 +490,9 @@
                         <div class="col-md-6">
                             <h4 id="quickview-title" class="mb-3"></h4>
                             <div class="d-flex align-items-center mb-3">
-                                <div class="me-3">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
+                                <div class="me-3" id="quickview-stars">
                                 </div>
-                                <span>(4.9)</span>
+                                <span id="quickview-rating"></span>
                             </div>
                             <p id="quickview-description" class="mb-4"></p>
                             <h5 class="mb-3" id="quickview-price"></h5>
@@ -1168,6 +1201,27 @@
                     document.getElementById('quickview-description').textContent = product.description;
                     document.getElementById('quickview-price').textContent = `R$ ${product.price.toFixed(2).replace('.', ',')}`;
                     document.getElementById('quickview-quantity').value = 1;
+                    
+                    // Atualizar estrelas
+                    const starsContainer = document.getElementById('quickview-stars');
+                    const rating = product.rating || 4.5;
+                    const fullStars = Math.floor(rating);
+                    const hasHalfStar = (rating - fullStars) >= 0.5;
+                    
+                    let starsHTML = '';
+                    for (let i = 0; i < fullStars; i++) {
+                        starsHTML += '<i class="fas fa-star text-warning"></i>';
+                    }
+                    if (hasHalfStar) {
+                        starsHTML += '<i class="fas fa-star-half-alt text-warning"></i>';
+                    }
+                    const totalStars = fullStars + (hasHalfStar ? 1 : 0);
+                    for (let i = totalStars; i < 5; i++) {
+                        starsHTML += '<i class="far fa-star text-warning"></i>';
+                    }
+                    
+                    starsContainer.innerHTML = starsHTML;
+                    document.getElementById('quickview-rating').textContent = `(${rating})`;
 
                     quickViewModal.show();
                 }
