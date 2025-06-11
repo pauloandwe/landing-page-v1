@@ -355,10 +355,14 @@
 @keyframes heartParticle {
     0% {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(calc(var(--dx) * 0.3), calc(var(--dy) * 0.3)) scale(1.15);
     }
     100% {
         opacity: 0;
-        transform: translateY(-50px) scale(0.5);
+        transform: translate(var(--dx), var(--dy)) scale(0.3);
     }
 }

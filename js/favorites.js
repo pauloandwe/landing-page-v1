@@ -345,22 +345,33 @@ class FavoritesManager {
       const particle = document.createElement("div");
       particle.innerHTML = "❤️";
       particle.className = "heart-particle";
-      particle.style.cssText = `
-        position: fixed;
-        left: ${rect.left + rect.width / 2}px;
-        top: ${rect.top + rect.height / 2}px;
-        font-size: ${12 + Math.random() * 8}px;
-        pointer-events: none;
-        z-index: 9999;
-        animation: heartParticle 1s ease-out forwards;
-        animation-delay: ${i * 0.1}s;
-      `;
+
+      // Calcula posição central do botão
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      // Tamanho do emoji
+      const fontSize = 12 + Math.random() * 8;
 
       // Movimento aleatório
       const angle = (Math.PI * 2 * i) / particles;
       const distance = 30 + Math.random() * 20;
-      particle.style.setProperty("--dx", Math.cos(angle) * distance + "px");
-      particle.style.setProperty("--dy", Math.sin(angle) * distance + "px");
+      const deltaX = Math.cos(angle) * distance;
+      const deltaY = Math.sin(angle) * distance;
+
+      particle.style.cssText = `
+        position: fixed;
+        left: ${centerX - fontSize / 2}px;
+        top: ${centerY - fontSize / 2}px;
+        font-size: ${fontSize}px;
+        pointer-events: none;
+        z-index: 9999;
+        transform-origin: center center;
+        animation: heartParticle 1s ease-out forwards;
+        animation-delay: ${i * 0.1}s;
+        --dx: ${deltaX}px;
+        --dy: ${deltaY}px;
+      `;
 
       document.body.appendChild(particle);
 
