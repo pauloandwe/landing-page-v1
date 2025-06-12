@@ -593,51 +593,6 @@ function addFavoriteCountersToProducts() {
         }
       }
     });
-
-  // Adiciona contadores nos brownies da home
-  document.querySelectorAll(".brownie-item").forEach((item) => {
-    const titleElement = item.querySelector("h4");
-    if (titleElement) {
-      const title = titleElement.textContent.trim();
-      const product =
-        typeof products !== "undefined"
-          ? products.find(
-              (p) =>
-                p.name === title ||
-                title.includes(p.name) ||
-                p.name.includes(title)
-            )
-          : null;
-
-      if (product) {
-        const counter = document.createElement("span");
-        counter.className = "favorite-counter";
-        counter.setAttribute("data-product-id", product.id);
-        counter.style.cssText = `
-          position: absolute;
-          top: 15px;
-          left: 15px;
-          background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
-          color: white;
-          border-radius: 50%;
-          width: 30px;
-          height: 30px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 12px;
-          font-weight: bold;
-          box-shadow: 0 3px 10px rgba(255, 107, 107, 0.4);
-          z-index: 10;
-        `;
-
-        const imageContainer = item.querySelector(".brownie-image");
-        if (imageContainer) {
-          imageContainer.appendChild(counter);
-        }
-      }
-    }
-  });
 }
 
 // Função para mostrar produtos mais favoritados
