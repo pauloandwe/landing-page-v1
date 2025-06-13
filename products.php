@@ -155,6 +155,19 @@ $products = [
         'rating' => 4.7,
         'reviews_count' => 51
     ],
+    [
+        'id' => 13,
+        'name' => "Combo Degustação de 6 Mini Brownies",
+        'price' => 14.90,
+        'image' => "img/products/product-13.png",
+        'description' => "Uma seleção de nossos melhores brownies em um só combo. Ideal para quem quer experimentar todos os sabores!",
+        'is_bestseller' => false,
+        'is_featured' => false,
+        'is_new' => false,
+        'rating' => 4.8,
+        'reviews_count' => 29
+    ],
+
 ];
 
 if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {

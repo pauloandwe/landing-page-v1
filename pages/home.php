@@ -139,8 +139,8 @@
 
                                 <div class="combo-price-section">
                                     <div class="price-row">
-                                        <span class="old-price">R$ 59,90</span>
-                                        <span class="current-price">R$ 45,90</span>
+                                        <span class="old-price">R$ 29,90</span>
+                                        <span class="current-price">R$ 14,90</span>
                                         <span class="discount-tag">23% OFF</span>
                                     </div>
                                     <p class="price-info">Embalagem especial para presente incluída</p>
@@ -151,7 +151,7 @@
                         <div class="col-lg-4 text-center">
                             <div class="combo-cta-action">
                                 <div class="combo-image-stack">
-                                    <img src="https://dabisa.com.br/wp-content/uploads/2024/06/Bolo-de-Pote-Dois-amores-doces-bolos-sobremesas-dabisasabores-vilamatilde-vilacarrao-analiafranco-tatuape-zonalestebolo-zonalestedoces-1.jpeg" alt="Combo Degustação" class="combo-img">
+                                    <img src="img/products/product-13.png" alt="Combo Degustação" class="combo-img">
                                 </div>
                                 <a href="produtos" class="btn-ver-todos">
                                     <span>Quero Experimentar</span>
@@ -366,11 +366,11 @@
                 </div>
                 <div class="col-12">
                     <div class="client-logos">
-                        <img src="img/coca.webp" width="160px" alt="Cliente Corporativo 1" class="client-logo">
-                        <img src="img/coca.webp" width="160px" alt="Cliente Corporativo 2" class="client-logo">
-                        <img src="img/coca.webp" width="160px" alt="Cliente Corporativo 3" class="client-logo">
-                        <img src="img/coca.webp" width="160px" alt="Cliente Corporativo 4" class="client-logo">
-                        <img src="img/coca.webp" width="160px" alt="Cliente Corporativo 4" class="client-logo">
+                        <img src="img/logos/logo-1.png" width="160px" alt="Cliente Corporativo 1" class="client-logo">
+                        <img src="img/logos/logo-2.webp" width="160px" alt="Cliente Corporativo 2" class="client-logo">
+                        <img src="img/logos/logo-3.webp" width="160px" alt="Cliente Corporativo 3" class="client-logo">
+                        <img src="img/logos/logo-4.webp" width="160px" alt="Cliente Corporativo 4" class="client-logo">
+                        <img src="img/logos/logo-5.png" width="160px" alt="Cliente Corporativo 5" class="client-logo">
                     </div>
                 </div>
             </div>
