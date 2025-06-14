@@ -94,10 +94,6 @@
                                 <div class="brownie-overlay">
                                     <h4><?= $product['name']; ?></h4>
                                     <p><?= $product['description']; ?></p>
-                                    <div class="brownie-price">R$ <?= number_format($product['price'], 2, ',', '.'); ?></div>
-                                    <?php if (isset($product['old_price'])): ?>
-                                        <div class="brownie-old-price">R$ <?= number_format($product['old_price'], 2, ',', '.'); ?></div>
-                                    <?php endif; ?>
                                 </div>
                             </div>
                         </a>
@@ -828,13 +824,6 @@ body {
 
 .product-badge-new {
     background-color: #00a978;
-}
-
-.brownie-price {
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-top: 10px;
-    color: white;
 }
 
 .stock-warning {
