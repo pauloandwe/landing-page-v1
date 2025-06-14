@@ -660,6 +660,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        text-decoration: none;
         transition: all 0.3s ease;
     }
 
