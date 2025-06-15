@@ -2,7 +2,7 @@
     <section class="hero-section-first">
          <div class="hero-video-container">
         <video autoplay muted loop playsinline class="hero-video">
-        <source src="video/video-back.mp4" type="video/mp4">            
+        <source src="video/back-smoll.mp4" type="video/mp4">            
             <div class="video-fallback"></div>
         </video>
         <div class="hero-video-overlay"></div>
