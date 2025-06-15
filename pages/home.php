@@ -921,11 +921,6 @@ body {
     transition: all 0.3s ease;
 }
 
-.flavor-tag:hover {
-    background-color: var(--secondary-color);
-    color: white;
-    transform: translateY(-2px);
-}
 
 .combo-price-section {
     background-color: #f8f9fa;
