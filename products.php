@@ -168,6 +168,58 @@ $products = [
         'reviews_count' => 29
     ],
 
+    [
+        'id' => 14,
+        'name' => "Caixa Clássica (6 Brownies)",
+        'price' => 49.90,
+        'image' => "img/products/product-6.png",
+        'description' => "Seis brownies sortidos em embalagem especial para presentear.",
+        'is_bestseller' => false,
+        'is_featured' => false,
+        'is_new' => false,
+        'rating' => 4.9,
+        'reviews_count' => 15,
+        'is_box' => true
+    ],
+    [
+        'id' => 15,
+        'name' => "Caixa Gourmet (12 Brownies)",
+        'price' => 89.90,
+        'image' => "img/products/product-7.png",
+        'description' => "Uma seleção de doze brownies dos nossos sabores favoritos.",
+        'is_bestseller' => false,
+        'is_featured' => false,
+        'is_new' => false,
+        'rating' => 4.8,
+        'reviews_count' => 8,
+        'is_box' => true
+    ],
+    [
+        'id' => 16,
+        'name' => "Caixa Festa (24 Brownies)",
+        'price' => 169.90,
+        'image' => "img/products/product-13.png",
+        'description' => "Vinte e quatro unidades para dividir com toda a família.",
+        'is_bestseller' => false,
+        'is_featured' => false,
+        'is_new' => false,
+        'rating' => 5.0,
+        'reviews_count' => 4,
+        'is_box' => true
+    ],
+       [
+        'id' => 17,
+        'name' => "Caixa Festa (24 Brownies)",
+        'price' => 169.90,
+        'image' => "img/products/product-13.png",
+        'description' => "Vinte e quatro unidades para dividir com toda a família.",
+        'is_bestseller' => false,
+        'is_featured' => false,
+        'is_new' => false,
+        'rating' => 5.0,
+        'reviews_count' => 4,
+        'is_box' => true
+    ],
 ];
 
 if (basename($_SERVER['PHP_SELF']) == basename(__FILE__)) {

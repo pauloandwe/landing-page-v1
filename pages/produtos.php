@@ -16,6 +16,9 @@ $featured_products = array_filter($products, function($product) {
 $other_products = array_filter($products, function($product) {
     return !$product['is_featured'] && !$product['is_bestseller'];
 });
+$box_products = array_filter($products, function($product) {
+    return isset($product['is_box']) && $product['is_box'];
+});
 ?>
 
 <div id="produtos">
@@ -335,6 +338,160 @@ $other_products = array_filter($products, function($product) {
                     </button>
                     <p class="mt-2 text-muted small">
                         Mostrando <?= count($other_slice); ?> de <?= count($other_products); ?> produtos
+                    </p>
+                </div>
+            <?php endif; ?>
+        </div>
+    </section>
+
+    <section class="py-5" style="background-color: var(--light-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Caixas de Brownie</h2>
+                <p class="section-subtitle text-center mb-5">Presenteie com nossas caixas especiais</p>
+            </div>
+
+            <div class="row" id="caixas-container">
+                <?php
+                $box_slice = array_slice($box_products, 0, 3);
+                $hidden_boxes = array_slice($box_products, 3);
+
+                foreach ($box_slice as $product) {
+                ?>
+                    <div class="col-md-4 mb-4 product-item">
+                        <div class="product-card product-card-enhanced">
+                            <?php if (isset($product['badge'])): ?>
+                                <div class="product-badge <?= $product['is_new'] ? 'product-badge-new' : '' ?>"><?= $product['badge']; ?></div>
+                            <?php endif; ?>
+
+                            <div class="product-image" style="background-image:url('<?= $product['image']; ?>');">
+                                <div class="product-quick-actions">
+                                    <button class="btn-quick-view" data-product-id="<?= $product['id']; ?>">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="shop-button btn-add-cart" data-product-id="<?= $product['id']; ?>">
+                                        <i class="fas fa-shopping-basket"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="product-info">
+                                <div class="product-rating">
+                                    <?php
+                                    $rating = $product['rating'];
+                                    $fullStars = floor($rating);
+                                    $hasHalfStar = ($rating - $fullStars) >= 0.5;
+
+                                    for ($i = 0; $i < $fullStars; $i++) {
+                                        echo '<i class="fas fa-star"></i>';
+                                    }
+                                    if ($hasHalfStar) {
+                                        echo '<i class="fas fa-star-half-alt"></i>';
+                                    }
+                                    $totalStars = $fullStars + ($hasHalfStar ? 1 : 0);
+                                    for ($i = $totalStars; $i < 5; $i++) {
+                                        echo '<i class="far fa-star"></i>';
+                                    }
+                                    ?>
+                                </div>
+                                <h4 class="product-title"><?= $product['name']; ?></h4>
+
+                                <p class="product-description">
+                                    <?= $product['description']; ?>
+                                </p>
+
+                                <div class="product-price-box">
+                                    <p class="product-price">R$ <?= number_format($product['price'], 2, ',', '.'); ?></p>
+
+                                    <?php if ($product['price'] > 15): ?>
+                                        <span class="product-installment">ou 3x de R$ <?= number_format($product['price'] / 3, 2, ',', '.'); ?> sem juros</span>
+                                    <?php endif; ?>
+                                </div>
+
+                                <div class="product-action">
+                                    <a href="loja" class="btn btn-primary shop-button btn-product"><i class="fas fa-shopping-bag me-2"></i>Comprar</a>
+                                    <button class="btn-wishlist" data-bs-toggle="tooltip" title="Adicionar aos favoritos">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+
+                <?php
+                foreach ($hidden_boxes as $product) {
+                ?>
+                    <div class="col-md-4 mb-4 product-item product-item-hidden" style="display: none;">
+                        <div class="product-card product-card-enhanced">
+                            <?php if (isset($product['badge'])): ?>
+                                <div class="product-badge <?= $product['is_new'] ? 'product-badge-new' : '' ?>"><?= $product['badge']; ?></div>
+                            <?php endif; ?>
+
+                            <div class="product-image" style="background-image:url('<?= $product['image']; ?>');">
+                                <div class="product-quick-actions">
+                                    <button class="btn-quick-view" data-product-id="<?= $product['id']; ?>">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="shop-button btn-add-cart" data-product-id="<?= $product['id']; ?>">
+                                        <i class="fas fa-shopping-basket"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="product-info">
+                                <div class="product-rating">
+                                    <?php
+                                    $rating = $product['rating'];
+                                    $fullStars = floor($rating);
+                                    $hasHalfStar = ($rating - $fullStars) >= 0.5;
+
+                                    for ($i = 0; $i < $fullStars; $i++) {
+                                        echo '<i class="fas fa-star"></i>';
+                                    }
+                                    if ($hasHalfStar) {
+                                        echo '<i class="fas fa-star-half-alt"></i>';
+                                    }
+                                    $totalStars = $fullStars + ($hasHalfStar ? 1 : 0);
+                                    for ($i = $totalStars; $i < 5; $i++) {
+                                        echo '<i class="far fa-star"></i>';
+                                    }
+                                    ?>
+                                </div>
+                                <h4 class="product-title"><?= $product['name']; ?></h4>
+
+                                <p class="product-description">
+                                    <?= $product['description']; ?>
+                                </p>
+
+                                <div class="product-price-box">
+                                    <p class="product-price">R$ <?= number_format($product['price'], 2, ',', '.'); ?></p>
+
+                                    <?php if ($product['price'] > 15): ?>
+                                        <span class="product-installment">ou 3x de R$ <?= number_format($product['price'] / 3, 2, ',', '.'); ?> sem juros</span>
+                                    <?php endif; ?>
+                                </div>
+
+                                <div class="product-action">
+                                    <a href="loja" class="btn btn-primary shop-button btn-product"><i class="fas fa-shopping-bag me-2"></i>Comprar</a>
+                                    <button class="btn-wishlist" data-bs-toggle="tooltip" title="Adicionar aos favoritos">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+
+            <?php if (count($hidden_boxes) > 0): ?>
+                <div class="text-center mt-4" id="ver-mais-caixas-container">
+                    <button class="btn-ver-mais-produtos" id="btn-ver-mais-caixas">
+                        <span class="btn-text">Ver Mais Caixas</span>
+                        <i class="fas fa-chevron-down ms-2"></i>
+                    </button>
+                    <p class="mt-2 text-muted small">
+                        Mostrando <?= count($box_slice); ?> de <?= count($box_products); ?> produtos
                     </p>
                 </div>
             <?php endif; ?>
@@ -1321,11 +1478,15 @@ $other_products = array_filter($products, function($product) {
         // Funcionalidade do botão "Ver Mais Produtos"
         const btnVerMais = document.getElementById('btn-ver-mais');
         const verMaisContainer = document.getElementById('ver-mais-container');
+        const outrosContainer = document.getElementById('outros-sabores-container');
+        const caixasContainer = document.getElementById('caixas-container');
+        const btnVerMaisCaixas = document.getElementById('btn-ver-mais-caixas');
+        const verMaisCaixasContainer = document.getElementById('ver-mais-caixas-container');
 
         if (btnVerMais) {
             btnVerMais.addEventListener('click', function() {
                 const button = this;
-                const hiddenProducts = document.querySelectorAll('.product-item-hidden');
+                const hiddenProducts = outrosContainer.querySelectorAll('.product-item-hidden');
 
                 button.classList.add('loading');
                 button.querySelector('.btn-text').textContent = 'Carregando...';
@@ -1350,4 +1511,33 @@ $other_products = array_filter($products, function($product) {
             });
         }
     });
+
+        if (btnVerMaisCaixas) {
+            btnVerMaisCaixas.addEventListener('click', function() {
+                const button = this;
+                const hiddenProducts = caixasContainer.querySelectorAll('.product-item-hidden');
+
+                button.classList.add('loading');
+                button.querySelector('.btn-text').textContent = 'Carregando...';
+
+                hiddenProducts.forEach((product, index) => {
+                    setTimeout(() => {
+                        product.style.display = 'block';
+                        requestAnimationFrame(() => {
+                            product.classList.add('show');
+                        });
+                    }, index * 200);
+                });
+
+                setTimeout(() => {
+                    verMaisCaixasContainer.style.opacity = '0';
+                    verMaisCaixasContainer.style.transform = 'translateY(-20px)';
+
+                    setTimeout(() => {
+                        verMaisCaixasContainer.style.display = 'none';
+                    }, 500);
+                }, hiddenProducts.length * 200 + 500);
+            });
+        }
+
 </script>
