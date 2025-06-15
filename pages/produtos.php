@@ -1510,7 +1510,6 @@ $box_products = array_filter($products, function($product) {
                 }, hiddenProducts.length * 200 + 500);
             });
         }
-    });
 
         if (btnVerMaisCaixas) {
             btnVerMaisCaixas.addEventListener('click', function() {
@@ -1539,5 +1538,5 @@ $box_products = array_filter($products, function($product) {
                 }, hiddenProducts.length * 200 + 500);
             });
         }
-
+    });
 </script>
