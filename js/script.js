@@ -230,19 +230,25 @@ $(document).ready(function () {
 
 function removePreloader() {
   $(".preloader").addClass("fade-out");
-
   setTimeout(function () {
     $(".preloader").css("display", "none");
   }, 1000);
 }
 
-$(window).on("load", function () {
-  removePreloader();
-});
+function handlePreloader() {
+  const heroVideo = document.querySelector(".hero-video");
 
-setTimeout(function () {
-  removePreloader();
-}, 2000);
+  if (heroVideo) {
+    const remove = () => removePreloader();
+    heroVideo.addEventListener("canplaythrough", remove, { once: true });
+
+    setTimeout(remove, 7000);
+  } else {
+    removePreloader();
+  }
+}
+
+$(window).on("load", handlePreloader);
 
 const testimonials = [
   {

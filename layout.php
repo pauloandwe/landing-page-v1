@@ -44,11 +44,13 @@ require_once 'products.php';
         </div>
     </nav>
 
+    <?php if ($page === 'home'): ?>
     <div class="preloader">
         <div class="loader">
             <div class="loader-inner"></div>
         </div>
     </div>
+    <?php endif; ?>
 
     <main id="page-content">
         <?php
