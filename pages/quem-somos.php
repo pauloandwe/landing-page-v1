@@ -267,28 +267,28 @@
                 <div class="row justify-content-center">
                     <div class="col-6 col-md-3 mb-4">
                         <div class="media-badge">
-                            <img height="150px" src="img/coca.webp" alt="Revista Gastronomia" class="media-badge-img">
+                            <img height="150px" src="https://benditosalgado.com.br/wp-content/uploads/2022/01/Brownie-G-Ferrero-Rocher.jpg" alt="Revista Gastronomia" class="media-badge-img">
                             <p class="media-badge-text">"Os melhores brownies artesanais do Brasil"</p>
                             <span class="media-source">Revista Gastronomia, 2023</span>
                         </div>
                     </div>
                     <div class="col-6 col-md-3 mb-4">
                         <div class="media-badge">
-                            <img height="150px" src="img/coca.webp" alt="Revista Gastronomia" class="media-badge-img">
+                            <img height="150px" src="https://www.cestapremium.com.br/admin/img/upload/produto-20191029-052237_resized_870x580.jpg" alt="Revista Gastronomia" class="media-badge-img">
                             <p class="media-badge-text">"Excelência em sabor e qualidade"</p>
                             <span class="media-source">Jornal do Sabor, 2023</span>
                         </div>
                     </div>
                     <div class="col-6 col-md-3 mb-4">
                         <div class="media-badge">
-                            <img height="150px" src="img/coca.webp" alt="Revista Gastronomia" class="media-badge-img">
+                            <img height="150px" src="https://static.wixstatic.com/media/9c1aeb_9fce3bcc962345afbf2e4d264d0d5880~mv2.png/v1/fill/w_480,h_476,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/9c1aeb_9fce3bcc962345afbf2e4d264d0d5880~mv2.png" alt="Revista Gastronomia" class="media-badge-img">
                             <p class="media-badge-text">"Inovação em doces artesanais"</p>
                             <span class="media-source">Portal Gourmet, 2024</span>
                         </div>
                     </div>
                     <div class="col-6 col-md-3 mb-4">
                         <div class="media-badge">
-                            <img height="150px" src="img/coca.webp" alt="Revista Gastronomia" class="media-badge-img">
+                            <img height="150px" src="https://wbl.blob.core.windows.net/img/sku/135/83541/100-cinta-para-brownie-200x40mm-em-couche-brilho-150g-4x0-sem-enobrecimento-refile_83541.png" alt="Revista Gastronomia" class="media-badge-img">
                             <p class="media-badge-text">"Tradição e modernidade em harmonia"</p>
                             <span class="media-source">TV Culinária, 2024</span>
                         </div>
@@ -738,6 +738,13 @@
         z-index: 1;
     }
 
+    .about-cta-section .cta-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
     .box-center {
         display: flex;
         justify-content: center;
@@ -847,6 +854,16 @@
 
         .media-badge-img {
             height: 120px !important;
+        }
+
+        .about-cta-section .cta-buttons {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .about-cta-section .cta-buttons .btn {
+            width: 100%;
+            margin-right: 0 !important;
         }
     }
 </style>

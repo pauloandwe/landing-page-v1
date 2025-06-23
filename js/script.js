@@ -228,27 +228,7 @@ $(document).ready(function () {
   initProductModal();
 });
 
-function removePreloader() {
-  $(".preloader").addClass("fade-out");
-  setTimeout(function () {
-    $(".preloader").css("display", "none");
-  }, 1000);
-}
-
-function handlePreloader() {
-  const heroVideo = document.querySelector(".hero-video");
-
-  if (heroVideo) {
-    const remove = () => removePreloader();
-    heroVideo.addEventListener("canplaythrough", remove, { once: true });
-
-    setTimeout(remove, 7000);
-  } else {
-    removePreloader();
-  }
-}
-
-$(window).on("load", handlePreloader);
+// Preloader removido - controlado inline no layout.php
 
 const testimonials = [
   {

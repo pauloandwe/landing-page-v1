@@ -50,6 +50,18 @@ require_once 'products.php';
             <div class="loader-inner"></div>
         </div>
     </div>
+    <script>
+        // Script inline para garantir que o preloader seja removido em 2 segundos
+        setTimeout(function() {
+            const preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.classList.add('fade-out');
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        }, 1500);
+    </script>
     <?php endif; ?>
 
     <main id="page-content">

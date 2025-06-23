@@ -377,7 +377,7 @@
         <div class="container text-center">
             <h3 class="mb-3">Tem alguma dúvida? Fale conosco!</h3>
             <p class="mb-4">Entre em contato pelo WhatsApp para encomendas personalizadas, dúvidas ou sugestões.</p>
-            <a href="https://wa.me/5511999988888?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20fazer%20uma%20encomenda.%20Voc%C3%AAs%20poderiam%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-success btn-lg whatsapp-btn">
+            <a href="https://wa.me/5511999988888?text=Ol%C3%A1%21%20Tenho%20interesse%20em%20fazer%20uma%20encomenda.%20Voc%C3%A9s%20poderiam%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" class="btn btn-success btn-lg whatsapp-btn">
                 <i class="fab fa-whatsapp me-2"></i> Conversar pelo WhatsApp
             </a>
         </div>
@@ -1856,6 +1856,108 @@ body {
     .combo-cta-btn {
         padding: 14px 28px;
         font-size: 1rem;
+    }
+}
+
+/* Media Query específica para telas menores que 450px - Página Home */
+@media (max-width: 450px) {
+    .hero-section-first {
+        padding: 80px 0 50px 0;
+        min-height: 600px;
+    }
+    
+    .hero-container {
+        padding: 0 15px;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .hero-section-img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+        border: 4px solid var(--cream);
+    }
+    
+    .lead-1 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+    }
+
+    .lead-2 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+        line-height: 1.1;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 25px;
+        max-width: 100%;
+        line-height: 1.5;
+        padding: 0 5px;
+    }
+
+    .hero-badge {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-badge .badge {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+        display: block;
+        text-align: center;
+        max-width: 100%;
+        white-space: normal;
+        line-height: 1.3;
+    }
+
+    .hero-section-first .btn-primary {
+        padding: 12px 28px;
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+        width: auto;
+        max-width: 280px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .delivery-info {
+        font-size: 0.85rem;
+        text-align: center;
+        padding: 0 10px;
+        margin-top: 15px;
+    }
+
+    .gallery {
+        gap: 15px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 100%;
+    }
+    
+    .gallery img {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    /* Ajustes específicos para o badge responsivo */
+    .hero-badge .badge .ms-2 {
+        margin-left: 0.3rem !important;
+    }
+    
+    .hero-badge .badge .me-1 {
+        margin-right: 0.2rem !important;
     }
 }
 </style>
